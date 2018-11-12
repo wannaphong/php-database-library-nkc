@@ -13,9 +13,7 @@ require_once("config.php");
 </head>
 <body>
     <header><?php echo $name_web;?></header>
-    <nav>
-      <a href="#">Home</a>
-    </nav>
+    <?php include('nav.php');?>
     <main>
       <article>
         <h1>My article</h1>
