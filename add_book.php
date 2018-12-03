@@ -1,4 +1,7 @@
 <?php
+/*
+ใช้เพิ่มข้อมูลหนังสือลงระบบ
+*/
 require_once("config.php");
 ?>
 <!DOCTYPE html>
@@ -6,7 +9,7 @@ require_once("config.php");
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ทดสอบ</title>
+    <title>เพิ่มข้อมูลหนังสือ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
@@ -16,13 +19,12 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1>เพิ่มข้อมูลนักเรียน</h1>
-        <form action="./save_add_student.php"  method="POST">
-        <br>ชื่อ : <input type="text" name="name"><br>
-        ที่อยู่ : <input type="text" name="address"><br>
-        ปีเดือนวันเกิด : <input type="date" name="dob"><br>
-        เพศ : <input type="text" name="gender"><br>
-        เบอร์ : <input type="tel" name="phone"><br>
+        <h1>เพิ่มข้อมูลหนังสือ</h1>
+        <form action="./save_add_book.php"  method="POST">
+        <br>ชื่อ : <input type="text" name="namebook"><br>
+        ผู้เขียน : <input type="text" name="author"><br>
+        หมวดหมู่ : <input type="text" name="category"><br>
+        สำนักพิมพ์ : <input type="text" name="publisher"><br>
         <input type="submit" value="Submit">
         </form>
         <p>Content</p>
