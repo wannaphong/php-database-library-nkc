@@ -10,6 +10,8 @@ CREATE TABLE `Students` (
 CREATE TABLE `Librarian`( 
 `LibrarianId` int(11) NOT NULL AUTO_INCREMENT,
  `IDcard` int NOT NULL,
+ `username` text NOT NULL,
+ `password` text NOT NULL,
  `Name` text NOT NULL,
  `Address` text, 
  PRIMARY KEY (`LibrarianId`)
