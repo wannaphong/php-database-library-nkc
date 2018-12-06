@@ -14,12 +14,12 @@ if(!empty($_POST['studentid'])) {
         exit();
     }
     else{
-        header("Location: code.php");
+        header("Location: student_id.php");
         exit();
     }
 }
 else{
-    header("Location: code.php");
+    header("Location: student_id.php");
     exit();
 }
 ?>
