@@ -36,7 +36,11 @@ require_once("config.php");
 	    $sql = "SELECT * FROM student_not_return WHERE StudentId=".$_COOKIE['studentid'];
         $query = mysqli_query($con,$sql);
         //echo $sql;
-
+        $rowcount=mysqli_num_rows($query);
+        if($rowcount== 0){
+            echo "<br>ไม่มีการยืม";
+         }
+         else{
     ?>
     <table width="600" border="1">
         <tr>
@@ -55,6 +59,7 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
     <td><a href="./return.php?borrowid=<?php echo $result["BorrowId"];?>">คืนหนังสือ</td>
   </tr>
 <?php
+}
 }
 ?>
 </table>

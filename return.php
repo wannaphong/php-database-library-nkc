@@ -6,5 +6,6 @@ $sql = "INSERT INTO Bookreturn (BorrowID,Date_of_Return) VALUES ('".$id."', NOW(
 mysqli_query($con,$sql);
 mysqli_commit($con);
 mysqli_close($con);
-echo "คืนหนังสือสำเร็จ";
+header("Location: borrow.php");
+exit();
 ?>
