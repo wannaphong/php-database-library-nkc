@@ -14,8 +14,8 @@ $pass=$_POST['pass'];
 $Address=$_POST['address'];
 $sql = "INSERT INTO Librarian (IDcard,username,password,Name,Address,status) VALUES ('".$IDcard."', '".$user."', '".$pass."','".$Name."','".$Address."','user')";
 mysqli_query($con,$sql);
-echo $sql;
 mysqli_commit($con);
 mysqli_close($con);
-echo "เพิ่มข้อมูลสำเร็จ";
+header("Location: ./librarian.php");
+exit();
 ?>
