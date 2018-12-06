@@ -11,4 +11,6 @@ mysqli_query($con,$sql);
 mysqli_commit($con);
 mysqli_close($con);
 echo "เพิ่มข้อมูลนักเรียนสำเร็จ";
+header("Location: ./student.php");
+exit();
 ?>

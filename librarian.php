@@ -1,5 +1,7 @@
 <?php
 require_once("config.php");
+require_once("check_admin.php");
+open_only_admin();
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,11 +18,11 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1>ระบบจัดการนักเรียนห้องสมุด</h1>
-        <a href="./add_student.php">เพิ่มรายชื่อ</a><br>
+        <h1>ระบบจัดการบรรณารักษ์ห้องสมุด</h1>
+        <a href="./add_librarian.php">เพิ่มรายชื่อ</a><br>
         <?php
         require("db.php");
-	    $sql = "SELECT * FROM Students";
+	    $sql = "SELECT * FROM Librarian";
         $query = mysqli_query($con,$sql);
         $rowcount=mysqli_num_rows($query);
         if($rowcount== 0){
@@ -31,15 +33,10 @@ require_once("config.php");
     <table border="1">
         <tr>
         <th> <div align="center">ชื่อ</div></th>
-        <th> <div align="center">รหัส</div></th>
-        <th> <div align="center">รายการยืมที่ค้าง</div></th>
-        <?php
-        require_once("check_admin.php");
-        if(is_admin()){
-        ?>
+        <th> <div align="center">บัตรประชาชน</div></th>
         <th> <div align="center">แก้ไขข้อมูล</div></th>
-        <th> <div align="center">ลบรายชื่อ</div></th>
-        <?php } ?>
+        <th> <div align="center">เปลี่ยนรหัสผ่าน</div></th>
+        <th> <div align="center">ลบ</div></th>
     </tr>
 <?php
 while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
@@ -47,11 +44,10 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 ?>
   <tr>
     <td><div align="center"><?php echo $result["Name"];?></div></td>
-    <td><?php echo $result["id"];?></td>
-    <td><a href="./student_borrow.php?stu_id=<?php echo $result["id"];?>">คลิก</a></td>
-    <?php if(is_admin()){ ?><td>
-    <a href="./edit_student.php?stu_id=<?php echo $result["id"];?>">คลิก</a></td>
-    <td><a href="./del_student.php?stu_id=<?php echo $result["id"];?>">คลิก</a></td><?php } ?>
+    <td><?php echo $result["IDcard"];?></td>
+    <td><a href="./edit_librarian.php?stu_id=<?php echo $result["LibrarianId"];?>">คลิก</a></td>
+    <td><a href="./edit_librarian.php?stu_id=<?php echo $result["LibrarianId"];?>">คลิก</a></td>
+    <td><a href="./del_student.php?stu_id=<?php echo $result["LibrarianId"];?>">คลิก</a></td>
   </tr>
 <?php
 }

@@ -1,5 +1,7 @@
 <?php
 require_once("is_login.php");
+require_once("check_admin.php");
+open_only_admin();
 require_once("db.php");
 $name=$_POST['name'];
 $id=$_POST['id'];

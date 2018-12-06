@@ -6,6 +6,10 @@
         echo '<a href="code.php">ยืมคืน</a>';
         echo '<a href="book.php">หนังสือ</a>';
         echo '<a href="student.php">นักเรียน</a>';
+        require_once("check_admin.php");
+        if(is_admin()){
+          echo '<a href="librarian.php">บรรณารักษ์</a>';
+        }
         echo '<a href="logout.php">Logout</a>';
       }
       else{
