@@ -11,8 +11,10 @@ $datetime1 = new DateTime(date("Y-m-d"));
 $datetime2 = new DateTime($rowcount["Deadlines"]);
 $fine_cal=0;
 if($datetime1>$datetime2){
-    echo "ค่าปรับ : ".$fine*$datetime1->diff($datetime2);
-    $fine_cal=$fine*$datetime1->diff($datetime2);
+    $fine_cal=(int)$datetime1->diff($datetime2)->format("%a");
+    $fine_cal=$fine*$fine_cal;
+    echo "ค่าปรับ : ".$fine_cal;
+    
 }
 echo '<a href="./return.php?borrowid='.$id.'&damages='.$fine_cal.'">คืนหนังสือ</a>';
 ?>
