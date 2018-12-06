@@ -67,10 +67,7 @@ mysqli_close($conn);
         <a href="book.php">ยืมหนังสือ</a><br>
         <a href="clean_studentid.php">เสร็จสิ้นรายการ</a>
     </article>
-	  <aside>
-	    <p>More information</p>
-	  </aside>
     </main>
-    <footer>Copyright ทดสอบ</footer>
+    <footer>Copyright <?php echo $name_web;?></footer>
 </body>
 </html>

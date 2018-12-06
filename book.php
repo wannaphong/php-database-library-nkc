@@ -1,4 +1,23 @@
 <?php
+require_once("is_login.php");
+require_once("config.php");
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ทดสอบ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <header><?php echo $name_web;?></header>
+    <?php include('nav.php');?>
+    <main>
+      <article>
+<?php
         require("db.php");
 	    $sql = "SELECT * FROM Books";
         $query = mysqli_query($con,$sql);
@@ -41,3 +60,8 @@ mysqli_close($conn);
 ?>
 <br>
 <a href="./add_book.php">เพิ่มหนังสือ</a>
+</article>
+    </main>
+    <footer>Copyright <?php echo $name_web;?></footer>
+</body>
+</html>

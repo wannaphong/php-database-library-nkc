@@ -1,5 +1,6 @@
 <?php
 require_once("is_login.php");
+require_once("check_studentid.php");
 require_once("db.php");
 $id=$_GET["borrowid"];
 $damages=$_GET["damages"];
