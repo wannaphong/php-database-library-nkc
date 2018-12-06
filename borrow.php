@@ -54,6 +54,7 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
     <td><div align="center"><?php echo $result["Namebooks"];?></div></td>
     <td><?php echo $result["Date_of_borrow"];?></td>
     <td><a href="./check_fine.php?borrowid=<?php echo $result["BorrowId"];?>">คืนหนังสือ</a></td>
+    <td><a href="./del_borrow.php?borrowid=<?php echo $result["BorrowId"];?>">ลบการยืมหนังสือ</a></td>
   </tr>
 <?php
 }
