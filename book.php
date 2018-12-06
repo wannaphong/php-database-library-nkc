@@ -28,10 +28,10 @@ require_once("config.php");
          }
          else{
     ?>
-    <table width="600" border="1">
+    <table border="1">
         <tr>
-        <th width="91"> <div align="center">ชื่อหนังสือ</div></th>
-        <th width="98"> <div align="center">ผู้เขียน</div></th>
+        <th> <div align="center">ชื่อหนังสือ</div></th>
+        <th> <div align="center">ผู้เขียน</div></th>
     </tr>
 <?php
 while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))

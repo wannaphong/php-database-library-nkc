@@ -41,10 +41,10 @@ require_once("check_studentid.php");
          }
          else{
     ?>
-    <table width="600" border="1">
+    <table border="1">
         <tr>
-        <th width="91"> <div align="center">ชื่อหนังสือ</div></th>
-        <th width="198"> <div align="center">วันที่ยืม</div></th>
+        <th> <div align="center">ชื่อหนังสือ</div></th>
+        <th> <div align="center">วันที่ยืม</div></th>
     </tr>
 <?php
 while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))

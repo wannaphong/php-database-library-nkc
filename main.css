@@ -42,3 +42,8 @@ footer{
     background-color: darkkhaki;
     text-align: center;
 }
+table{
+    overflow-x:auto;
+    text-align: center;
+    align-content: center;
+}

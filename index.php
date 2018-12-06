@@ -16,12 +16,9 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1>My article</h1>
-        <p>Content</p>
+        <h1>ระบบยืม-คืนหนังสือห้องสมุด</h1>
+        <p>พัฒนาโดย นักศึกษาสาขาวิทยาการคอมพิวเตอร์และสารสนเทศ</p>
     </article>
-	  <aside>
-	    <p>More information</p>
-	  </aside>
     </main>
     <footer>Copyright <?php echo $name_web;?></footer>
 </body>

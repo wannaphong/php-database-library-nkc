@@ -22,7 +22,7 @@ require_once("config.php");
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ทดสอบ</title>
+    <title>ทดสอบ : <?php echo $name_web;?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
@@ -36,15 +36,12 @@ require_once("config.php");
         <?php
         ?>
         <form action="./save_student_use.php"  method="POST">
-        <br>รหัสนักศึกษา : <input type="text" name="studentid"><br>
+        <br>รหัสนักศึกษา : <input type="number" name="studentid"><br>
         <input type="submit" value="Submit">
         </form>
         <p>Content</p>
     </article>
-	  <aside>
-	    <p>More information</p>
-	  </aside>
     </main>
-    <footer>Copyright ทดสอบ</footer>
+    <footer>Copyright  <?php echo $name_web;?></footer>
 </body>
 </html>
