@@ -22,6 +22,8 @@ require_once("config.php");
         ที่อยู่ : <input type="text" name="address"><br>
         IDcard : <input type="text" name="idcard"><br>
         เพศ : <input type="text" name="gender"><br>
+        User : <input type="text" name="user"><br>
+        Password : <input type="password" name="pass"><br>
         <input type="submit" value="Submit">
         </form>
         <p>Content</p>
