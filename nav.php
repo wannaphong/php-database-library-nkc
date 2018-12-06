@@ -1,9 +1,7 @@
 <nav>
-<?php
-session_start();?>
       <a href="./">Home</a>
       <?php
-      if ($_SESSION['logged']==TRUE)
+      if (isset($_COOKIE['user']))
       {
         echo '<a href="logout.php">Logout</a>';
       }
@@ -11,4 +9,4 @@ session_start();?>
         echo '<a href="login.php">Login</a>';
       }
       ?>
-    </nav>
+</nav>
