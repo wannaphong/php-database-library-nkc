@@ -17,9 +17,10 @@ CREATE TABLE `Librarian`(
  PRIMARY KEY (`LibrarianId`)
  );
 
-CREATE TABLE `Return` ( `ReturnId` int(11) NOT NULL AUTO_INCREMENT,
- `Date_of_borrow` date NOT NULL,
+CREATE TABLE `Bookreturn` ( `ReturnId` int(11) NOT NULL AUTO_INCREMENT,
+`BorrowId` int references `Borrow`(`BorrowId`) ON UPDATE CASCADE ON DELETE CASCADE,
  `Date_of_Return` date NOT NULL,
+`Damages` int,
  PRIMARY KEY (`ReturnId`) 
 );
 
@@ -31,20 +32,12 @@ CREATE TABLE `Books` ( `BookId` int(11) NOT NULL AUTO_INCREMENT,
  PRIMARY KEY (`BookId`)
  );
 
-CREATE TABLE `Detail`(
-`DetailID` int(11) NOT NULL AUTO_INCREMENT,
-`BorrowId` int NOT NULL,
-`BookId` int NOT NULL,
- PRIMARY KEY (`DetailID`),
-FOREIGN KEY (`BorrowId`) REFERENCES Borrow(`BorrowId`)
-);
-
-
 CREATE TABLE `Borrow` ( 
 `BorrowId` int NOT NULL AUTO_INCREMENT,
-`ReturnId` int(11) references `Return`(`ReturnId`),
 `LibrarianId` int references `Librarian`(`LibrarianId`),
-`StudentId` int REFERENCES `Students`(`StudentId`) ON UPDATE CASCADE ON DELETE RESTRICT,
+`BookId` int references `Books`(`BookId`) ON UPDATE CASCADE ON DELETE CASCADE,
+`StudentId` int REFERENCES `Students`(`StudentId`) ON UPDATE CASCADE ON DELETE CASCADE,
 `Date_of_borrow` date NOT NULL,
+`Deadlines` date NOT NULL,
 PRIMARY KEY (`BorrowId`)
 );

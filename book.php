@@ -17,48 +17,55 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-<?php
+    <?php
         require("db.php");
 	    $sql = "SELECT * FROM Books";
         $query = mysqli_query($con,$sql);
-        //echo $sql;
         $rowcount=mysqli_num_rows($query);
         if($rowcount== 0){
             echo "<br>ไม่มีหนังสือให้ยืม";
          }
-         else{
+        else{
     ?>
     <table border="1">
         <tr>
         <th> <div align="center">ชื่อหนังสือ</div></th>
         <th> <div align="center">ผู้เขียน</div></th>
     </tr>
-<?php
-while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
-{
-?>
-  <tr>
-    <td><div align="center"><?php echo $result["Namebooks"];?></div></td>
-    <td><?php echo $result["Author"];?></td>
     <?php
-    if (isset($_COOKIE['studentid']))
+    while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
     {
-    
     ?>
-    <td><a href="./borrowbook.php?bookid=<?php echo $result["BookId"];?>">ยืมหนังสือ</a></td>
-  <?php
-    }
-  ?>
+    <tr>
+        <td><div align="center"><?php echo $result["Namebooks"];?></div></td>
+        <td><?php echo $result["Author"];?></td>
+        <?php
+        if (isset($_COOKIE['studentid']))
+        {
+        ?>
+        <td><a href="./borrowbook.php?bookid=<?php echo $result["BookId"];?>">ยืมหนังสือ</a></td>
+        <?php
+        }
+        ?>
   </tr>
-<?php
-}
-}
-?>
+    <?php
+    }
+    }
+    ?>
 </table>
 <?php
 mysqli_close($conn);
 ?>
 <br>
+<?php
+    if (isset($_COOKIE['studentid']))
+    {
+        ?>
+        <form method="POST" action="./borrowbook.php">
+        <br>Book ID : <input type="text" name="bookid"><br>
+        <input type="submit" value="Submit">
+        </form>
+<?php } ?>
 <a href="./add_book.php">เพิ่มหนังสือ</a>
 </article>
     </main>
