@@ -33,6 +33,8 @@ require_once("config.php");
         <th> <div align="center">ชื่อ</div></th>
         <th> <div align="center">รหัส</div></th>
         <th> <div align="center">รายการยืมที่ค้าง</div></th>
+        <th> <div align="center">แก้ไขข้อมูล</div></th>
+        <th> <div align="center">ลบรายชื่อ</div></th>
     </tr>
 <?php
 while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
@@ -42,7 +44,8 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
     <td><div align="center"><?php echo $result["Name"];?></div></td>
     <td><?php echo $result["id"];?></td>
     <td><a href="./student_borrow.php?stu_id=<?php echo $result["id"];?>">คลิก</a></td>
-    <td><a href="./del_student.php?stu_id=<?php echo $result["id"];?>">ลบรายชื่อ</a></td>
+    <td><a href="./edit_student.php?stu_id=<?php echo $result["id"];?>">คลิก</a></td>
+    <td><a href="./del_student.php?stu_id=<?php echo $result["id"];?>">คลิก</a></td>
   </tr>
 <?php
 }
