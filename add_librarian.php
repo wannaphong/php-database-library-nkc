@@ -6,7 +6,7 @@ require_once("config.php");
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ทดสอบ</title>
+    <title>เพิ่มข้อมูลบรรณารักษ์</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
@@ -16,21 +16,19 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1>เพิ่มข้อมูล</h1>
+        <h1>เพิ่มข้อมูลบรรณารักษ์</h1>
         <form action="./save_add_librarian.php"  method="POST">
-        <br>ชื่อ : <input type="text" name="name"><br>
-        ที่อยู่ : <input type="text" name="address"><br>
-        IDcard : <input type="text" name="idcard"><br>
-        เพศ : <input type="text" name="gender"><br>
-        User : <input type="text" name="user"><br>
-        Password : <input type="password" name="pass"><br>
-        <input type="submit" value="Submit">
+        <table>
+        <tr>
+        <td>ชื่อ :</td>  <td><input type="text" name="name"></td></tr>
+        <tr><td>ที่อยู่ :</td> <td><input type="text" name="address"></td></tr>
+        <tr><td>IDcard :</td> <td><input type="text" name="idcard"></td></tr>
+        <tr><td>เพศ :</td> <td><input type="text" name="gender"></td></tr>
+        <tr><td>User :</td> <td><input type="text" name="user"></td></tr>
+        <tr><td>Password :</td> <td><input type="password" name="pass"></td></tr>
+        <tr><td><input type="submit" value="Submit"></td></tr></table>
         </form>
-        <p>Content</p>
     </article>
-	  <aside>
-	    <p>More information</p>
-	  </aside>
     </main>
     <footer>Copyright ทดสอบ</footer>
 </body>

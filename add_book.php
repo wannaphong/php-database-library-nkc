@@ -21,17 +21,18 @@ require_once("config.php");
       <article>
         <h1>เพิ่มข้อมูลหนังสือ</h1>
         <form action="./save_add_book.php"  method="POST">
-        <br>ชื่อ : <input type="text" name="namebook"><br>
-        ผู้เขียน : <input type="text" name="author"><br>
-        หมวดหมู่ : <input type="text" name="category"><br>
-        สำนักพิมพ์ : <input type="text" name="publisher"><br>
-        <input type="submit" value="Submit">
+        <table>
+        <tr>
+            <td>ชื่อ :</td> 
+            <td><input type="text" name="namebook"></td>
+        </tr><tr>
+        <td>ผู้เขียน :</td> <td><input type="text" name="author"></td></tr><tr>
+        <td>หมวดหมู่ :</td> <td><input type="text" name="category"></td></tr><tr>
+        <td>สำนักพิมพ์ :</td> <td><input type="text" name="publisher"></td></tr><tr>
+        <td><input type="submit" value="Submit"></td></tr>
+        </table>
         </form>
-        <p>Content</p>
     </article>
-	  <aside>
-	    <p>More information</p>
-	  </aside>
     </main>
     <footer>Copyright ทดสอบ</footer>
 </body>

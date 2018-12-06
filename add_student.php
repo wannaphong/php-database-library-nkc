@@ -19,14 +19,15 @@ require_once("config.php");
       <article>
         <h1>เพิ่มข้อมูลนักเรียน</h1>
         <form action="./save_add_student.php"  method="POST">
-        <br>ชื่อ : <input type="text" name="name"><br>
-        ที่อยู่ : <input type="text" name="address"><br>
-        ปีเดือนวันเกิด : <input type="date" name="dob"><br>
-        เพศ : <input type="text" name="gender"><br>
-        เบอร์ : <input type="tel" name="phone"><br>
-        <input type="submit" value="Submit">
+        <table>
+        <tr>
+        <tr><td>ชื่อ :</td> <td><input type="text" name="name"></td></tr>
+        <tr><td>ที่อยู่ :</td> <td><input type="text" name="address"></td></tr>
+        <tr><td>ปีเดือนวันเกิด :</td> <td><input type="date" name="dob"></td></tr>
+        <tr><td>เพศ :</td> <td><input type="text" name="gender"></td></tr>
+        <tr><td>เบอร์ :</td> <td><input type="tel" name="phone"></td></tr>
+        <tr><td><input type="submit" value="Submit"></td></tr></table>
         </form>
-        <p>Content</p>
     </article>
     </main>
     <footer>Copyright <?php echo $name_web;?></footer>
