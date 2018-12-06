@@ -21,15 +21,15 @@ require_once("check_studentid.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
-</head>
+<?php include("js.php"); ?></head>
 <body>
-    <header><?php echo $name_web;?></header>
+    <?php include('header_web.php');?>
     <?php include('nav.php');?>
     <main>
       <article>
         <h1>รายการยืมหนังสือ</h1>
         <?php
-        echo "รหัสนักเรียน : ".$_COOKIE['studentid'];
+        echo "รหัสนักเรียน : ".$_COOKIE['studentid']."<br>";
         ?>
         <?php
         require("db.php");
@@ -37,7 +37,7 @@ require_once("check_studentid.php");
         $query = mysqli_query($con,$sql);
         $rowcount=mysqli_num_rows($query);
         if($rowcount== 0){
-            echo "<br>ไม่มีการยืม";
+            echo "ไม่มีการยืม";
          }
          else{
     ?>
@@ -54,7 +54,7 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
     <td><div align="center"><?php echo $result["Namebooks"];?></div></td>
     <td><?php echo $result["Date_of_borrow"];?></td>
     <td><a href="./check_fine.php?borrowid=<?php echo $result["BorrowId"];?>">คืนหนังสือ</a></td>
-    <td><a href="./del_borrow.php?borrowid=<?php echo $result["BorrowId"];?>">ลบการยืมหนังสือ</a></td>
+    <td><a href="./del_borrow.php?borrowid=<?php echo $result["BorrowId"];?>" onclick="return confirm('คุณแน่ใจว่าต้องการลบ ?')">ลบการยืมหนังสือ</a></td>
   </tr>
 <?php
 }
@@ -65,8 +65,8 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 mysqli_close($conn);
 ?>
         <br>
-        <a href="book.php">ยืมหนังสือ</a><br>
-        <a href="clean_studentid.php">เสร็จสิ้นรายการ</a>
+        <a href="book.php"><button>ยืมหนังสือ</button></a><br>
+        <a href="clean_studentid.php"><button>เสร็จสิ้นรายการ</button></a><br>
     </article>
     </main>
     <footer>Copyright <?php echo $name_web;?></footer>

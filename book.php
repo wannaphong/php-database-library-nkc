@@ -7,13 +7,13 @@ require_once("config.php");
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ทดสอบ</title>
+    <title>รายการหนังสือ : <?php echo $name_web;?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
-</head>
+<?php include("js.php"); ?></head>
 <body>
-    <header><?php echo $name_web;?></header>
+    <?php include('header_web.php');?>
     <?php include('nav.php');?>
     <main>
       <article>
@@ -43,7 +43,7 @@ require_once("config.php");
         if (isset($_COOKIE['studentid']))
         {
         ?>
-        <td><a href="./borrowbook.php?bookid=<?php echo $result["BookId"];?>">ยืมหนังสือ</a></td>
+        <td><a href="./borrowbook.php?bookid=<?php echo $result["BookId"];?>"><button>ยืมหนังสือ</button></a></td>
         <?php
         }
         ?>
@@ -66,7 +66,7 @@ mysqli_close($conn);
         <input type="submit" value="Submit">
         </form>
 <?php } ?>
-<a href="./add_book.php">เพิ่มหนังสือ</a>
+<a href="./add_book.php"><button>เพิ่มหนังสือ</button></a>
 </article>
     </main>
     <footer>Copyright <?php echo $name_web;?></footer>

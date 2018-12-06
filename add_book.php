@@ -13,9 +13,9 @@ require_once("config.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
-</head>
+<?php include("js.php"); ?></head>
 <body>
-    <header><?php echo $name_web;?></header>
+    <?php include('header_web.php');?>
     <?php include('nav.php');?>
     <main>
       <article>

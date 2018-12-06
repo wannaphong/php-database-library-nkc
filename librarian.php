@@ -12,14 +12,14 @@ open_only_admin();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
-</head>
+<?php include("js.php"); ?></head>
 <body>
-    <header><?php echo $name_web;?></header>
+    <?php include('header_web.php');?>
     <?php include('nav.php');?>
     <main>
       <article>
         <h1>ระบบจัดการบรรณารักษ์ห้องสมุด</h1>
-        <a href="./add_librarian.php">เพิ่มรายชื่อ</a><br>
+        <a href="./add_librarian.php"><button>เพิ่มรายชื่อ</button></a><br>
         <?php
         require("db.php");
 	    $sql = "SELECT * FROM Librarian";
@@ -47,7 +47,7 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
     <td><?php echo $result["IDcard"];?></td>
     <td><a href="./edit_librarian.php?id=<?php echo $result["LibrarianId"];?>">คลิก</a></td>
     <td><a href="./edit_pass.php?id=<?php echo $result["LibrarianId"];?>">คลิก</a></td>
-    <td><a href="./del_librarian.php?id=<?php echo $result["LibrarianId"];?>">คลิก</a></td>
+    <td><a href="./del_librarian.php?id=<?php echo $result["LibrarianId"];?>" onclick="return confirm('คุณแน่ใจว่าต้องการลบ ?')">คลิก</a></td>
   </tr>
 <?php
 }

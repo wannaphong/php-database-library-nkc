@@ -10,14 +10,14 @@ require_once("config.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
-</head>
+<?php include("js.php"); ?></head>
 <body>
-    <header><?php echo $name_web;?></header>
+<?php include('header_web.php');?>
     <?php include('nav.php');?>
     <main>
       <article>
         <h1>ระบบจัดการนักเรียนห้องสมุด</h1>
-        <a href="./add_student.php">เพิ่มรายชื่อ</a><br>
+        <a href="./add_student.php"><button>เพิ่มรายชื่อ</button></a><br>
         <?php
         require("db.php");
 	    $sql = "SELECT * FROM Students";
@@ -51,7 +51,7 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
     <td><a href="./student_borrow.php?stu_id=<?php echo $result["id"];?>">คลิก</a></td>
     <?php if(is_admin()){ ?><td>
     <a href="./edit_student.php?stu_id=<?php echo $result["id"];?>">คลิก</a></td>
-    <td><a href="./del_student.php?stu_id=<?php echo $result["id"];?>">คลิก</a></td><?php } ?>
+    <td><a href="./del_student.php?stu_id=<?php echo $result["id"];?>" onclick="return confirm('คุณแน่ใจว่าต้องการลบ ?')">คลิก</a></td><?php } ?>
   </tr>
 <?php
 }
