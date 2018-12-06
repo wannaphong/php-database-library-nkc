@@ -4,7 +4,7 @@
 */
 require_once("is_login.php");
 require_once("config.php");
-
+require_once("check_studentid.php");
 /*
 แสดงรายการหนังสือที่ยืม ในการยืมแต่ละครั้ง
 
@@ -33,9 +33,8 @@ require_once("config.php");
         ?>
         <?php
         require("db.php");
-	    $sql = "SELECT * FROM student_not_return WHERE StudentId=".$_COOKIE['studentid'];
+	    $sql = "SELECT Books.Namebooks, A.Date_of_borrow,A.BorrowId FROM student_not_return as A INNER JOIN Books ON A.BookId=Books.BookId WHERE A.StudentId=".$_COOKIE['studentid'];//"SELECT * FROM student_not_return WHERE StudentId=".$_COOKIE['studentid'];
         $query = mysqli_query($con,$sql);
-        //echo $sql;
         $rowcount=mysqli_num_rows($query);
         if($rowcount== 0){
             echo "<br>ไม่มีการยืม";
@@ -44,17 +43,15 @@ require_once("config.php");
     ?>
     <table width="600" border="1">
         <tr>
-        <th width="91"> <div align="center">CustomerID </div></th>
-        <th width="98"> <div align="center">Name </div></th>
-        <th width="198"> <div align="center">Email </div></th>
+        <th width="91"> <div align="center">ชื่อหนังสือ</div></th>
+        <th width="198"> <div align="center">วันที่ยืม</div></th>
     </tr>
 <?php
 while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 {
 ?>
   <tr>
-    <td><div align="center"><?php echo $result["BorrowId"];?></div></td>
-    <td><?php echo $result["LibrarianId"];?></td>
+    <td><div align="center"><?php echo $result["Namebooks"];?></div></td>
     <td><?php echo $result["Date_of_borrow"];?></td>
     <td><a href="./check_fine.php?borrowid=<?php echo $result["BorrowId"];?>">คืนหนังสือ</a></td>
   </tr>
@@ -67,6 +64,7 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 mysqli_close($conn);
 ?>
         <br>
+        <a href="book.php">ยืมหนังสือ</a><br>
         <a href="clean_studentid.php">เสร็จสิ้นรายการ</a>
     </article>
 	  <aside>

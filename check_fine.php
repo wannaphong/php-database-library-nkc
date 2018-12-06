@@ -1,4 +1,5 @@
 <?php
+require_once("check_studentid.php");
 require_once("is_login.php");
 require_once("db.php");
 require("config.php");
