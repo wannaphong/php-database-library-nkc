@@ -28,6 +28,7 @@ require_once("config.php");
         <tr><td>Password :</td> <td><input type="password" name="pass"></td></tr>
         <tr><td><input type="submit" value="Submit"></td></tr></table>
         </form>
+        <br>
     </article>
     </main>
     <footer>Copyright ทดสอบ</footer>

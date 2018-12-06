@@ -27,7 +27,7 @@ require_once("config.php");
         <tr><td>เพศ :</td> <td><input type="text" name="gender"></td></tr>
         <tr><td>เบอร์ :</td> <td><input type="tel" name="phone"></td></tr>
         <tr><td><input type="submit" value="Submit"></td></tr></table>
-        </form>
+        </form><br>
     </article>
     </main>
     <footer>Copyright <?php echo $name_web;?></footer>

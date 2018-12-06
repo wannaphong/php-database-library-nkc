@@ -30,7 +30,7 @@ require_once("config.php");
         <td>หมวดหมู่ :</td> <td><input type="text" name="category"></td></tr><tr>
         <td>สำนักพิมพ์ :</td> <td><input type="text" name="publisher"></td></tr><tr>
         <td><input type="submit" value="Submit"></td></tr>
-        </table>
+        </table><br>
         </form>
     </article>
     </main>
