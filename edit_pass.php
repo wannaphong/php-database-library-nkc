@@ -38,9 +38,8 @@ require_once("config.php");
 <?php
 $result=mysqli_fetch_array($query,MYSQLI_ASSOC)
 ?>
-  <form action="./save_edit_librarian.php"  method="POST">
-        <br>ชื่อ : <input type="text" name="name" value="<?php echo $result['Name'];  ?>"><br>
-        ที่อยู่ : <input type="text" name="address" value="<?php echo $result['Address'];  ?>"><br>
+  <form action="./save_newpass.php"  method="POST">
+        Password : <input type="password" name="pass"><br>
         <input type="hidden" name="id" value=<?php echo $st_id; ?>>
         <input type="submit" value="Submit">
     </form>

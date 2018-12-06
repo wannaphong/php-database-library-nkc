@@ -45,9 +45,9 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
   <tr>
     <td><div align="center"><?php echo $result["Name"];?></div></td>
     <td><?php echo $result["IDcard"];?></td>
-    <td><a href="./edit_librarian.php?stu_id=<?php echo $result["LibrarianId"];?>">คลิก</a></td>
-    <td><a href="./edit_librarian.php?stu_id=<?php echo $result["LibrarianId"];?>">คลิก</a></td>
-    <td><a href="./del_student.php?stu_id=<?php echo $result["LibrarianId"];?>">คลิก</a></td>
+    <td><a href="./edit_librarian.php?id=<?php echo $result["LibrarianId"];?>">คลิก</a></td>
+    <td><a href="./edit_pass.php?id=<?php echo $result["LibrarianId"];?>">คลิก</a></td>
+    <td><a href="./del_librarian.php?id=<?php echo $result["LibrarianId"];?>">คลิก</a></td>
   </tr>
 <?php
 }
