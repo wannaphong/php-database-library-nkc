@@ -17,12 +17,15 @@ require_once("config.php");
       <article>
         <h1>Login</h1>
         <form method="POST" action="check_login.php">
-        <br>User<br><input type="text" name="user"><br>
-        Password<br><input type="password" name="password"><br>
-        <input type="submit" value="Submit">
+        <table>
+        <tr>
+        <td>User</td><td><input type="text" name="user"></td></tr>
+        <tr><td>Password</td><td><input type="password" name="password"></td></tr>
+        <tr><td><input type="submit" value="Submit"></td></tr>
+</table>
         </form>
     </article>
     </main>
-    <footer>Copyright <?php echo $name_web;?>/footer>
+    <footer>Copyright <?php echo $name_web;?></footer>
 </body>
 </html>

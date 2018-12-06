@@ -36,8 +36,10 @@ require_once("config.php");
         <?php
         ?>
         <form action="./save_student_use.php"  method="POST">
-        <br>รหัสนักเรียน : <input type="number" name="studentid"><br>
-        <input type="submit" value="Submit">
+        <table>
+        <tr>
+        <td>รหัสนักเรียน :</td> <td><input type="number" name="studentid"></td></tr>
+        <tr><td><input type="submit" value="Submit"></td></tr>
         </form>
     </article>
     </main>

@@ -45,6 +45,8 @@ require_once("check_studentid.php");
         <tr>
         <th> <div align="center">ชื่อหนังสือ</div></th>
         <th> <div align="center">วันที่ยืม</div></th>
+        <th> <div align="center">คืน</div></th>
+        <th> <div align="center">ลบ</div></th>
     </tr>
 <?php
 while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
@@ -53,7 +55,7 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
   <tr>
     <td><div align="center"><?php echo $result["Namebooks"];?></div></td>
     <td><?php echo $result["Date_of_borrow"];?></td>
-    <td><a href="./check_fine.php?borrowid=<?php echo $result["BorrowId"];?>">คืนหนังสือ</a></td>
+    <td><a href="./check_fine.php?borrowid=<?php echo $result["BorrowId"];?>"><button>คลิก</button></a></td>
     <td><a href="./del_borrow.php?borrowid=<?php echo $result["BorrowId"];?>" onclick="return confirm('คุณแน่ใจว่าต้องการลบ ?')">ลบการยืมหนังสือ</a></td>
   </tr>
 <?php
@@ -64,9 +66,8 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 <?php
 mysqli_close($conn);
 ?>
-        <br>
         <a href="book.php"><button>ยืมหนังสือ</button></a><br>
-        <a href="clean_studentid.php"><button>เสร็จสิ้นรายการ</button></a><br>
+        <a href="clean_studentid.php"><button>เสร็จสิ้นรายการ</button></a><br><br>
     </article>
     </main>
     <footer>Copyright <?php echo $name_web;?></footer>
