@@ -34,7 +34,7 @@ CREATE TABLE `Books` ( `BookId` int(11) NOT NULL AUTO_INCREMENT,
 
 CREATE TABLE `Borrow` ( 
 `BorrowId` int NOT NULL AUTO_INCREMENT,
-`LibrarianId` int references `Librarian`(`LibrarianId`),
+`LibrarianId` int references `Librarian`(`LibrarianId`) ON UPDATE CASCADE ON DELETE RESTRICT,
 `BookId` int references `Books`(`BookId`) ON UPDATE CASCADE ON DELETE CASCADE,
 `StudentId` int REFERENCES `Students`(`StudentId`) ON UPDATE CASCADE ON DELETE CASCADE,
 `Date_of_borrow` date NOT NULL,
