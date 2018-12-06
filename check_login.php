@@ -1,10 +1,9 @@
 <?php
-if(!empty($_POST['user'])) {
+if(!empty($_POST['user'])&&!empty($_POST['password'])) {
     require("db.php");
-    $usr=$_POST['user'];
-    $pas=$_POST['password'];
+    $usr=mysqli_real_escape_string($con,$_POST['user']);
+    $pas=mysqli_real_escape_string($con,$_POST['password']);
     $sql="select * from Librarian WHERE username='$usr' AND password='$pas'";
-    echo $sql;
     $result=mysqli_query($con,$sql);
     $rowcount=mysqli_fetch_array($result);
     if($rowcount){
@@ -12,13 +11,18 @@ if(!empty($_POST['user'])) {
         $cookie_name = "user";
         $cookie_value = $rowcount['LibrarianId'];
         setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
-    mysqli_close($con);
-       header("Location: index.php");
-       echo "ok";
-       exit();
+        mysqli_close($con);
+        header("Location: index.php");
+        echo "ok";
+        exit();
     }
     else{
-        echo "error";
+        header("Location: login.php");
+        exit();
     }
+}
+else{
+    header("Location: login.php");
+    exit();
 }
 ?>

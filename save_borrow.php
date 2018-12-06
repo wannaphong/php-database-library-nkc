@@ -1,10 +1,10 @@
 <?php
-session_start();
+require_once("is_login.php");
 /*
 บันทึกการยืมหนังสือ
 */
 require_once("db.php");
-$LibrarianId=$_SESSION['username'];
+$LibrarianId=$_COOKIE['user'];
 $StudentId=$_POST['StudentId'];
 $BookId=$_POST['BookId'];
 $Date_of_borrow= date('Y-m-d H:i:s');

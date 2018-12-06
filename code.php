@@ -3,6 +3,11 @@
 หน้านี้เป็นหน้าสำหรับเพิ่มรายการที่ยืม หรือ ลบรายการที่ยืม โดยสามารถยกเลิกการยืมได้
 */
 require_once("is_login.php");
+if (isset($_COOKIE['studentid']))
+{
+        header("Location: borrow.php");
+        exit();
+}
 require_once("config.php");
 
 /*
@@ -27,42 +32,14 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1>รายการยืมหนังสือ</h1>
+        <h1>ระบบยืมคืนหนังสือ</h1>
         <?php
-        echo "รหัสนักเรียน : ".$_COOKIE['studentid'];
         ?>
-        <?php
-        require("db.php");
-	    $sql = "SELECT * FROM student_not_return WHERE StudentId=".$_COOKIE['studentid'];
-        $query = mysqli_query($con,$sql);
-        //echo $sql;
-
-    ?>
-    <table width="600" border="1">
-        <tr>
-        <th width="91"> <div align="center">CustomerID </div></th>
-        <th width="98"> <div align="center">Name </div></th>
-        <th width="198"> <div align="center">Email </div></th>
-    </tr>
-<?php
-while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
-{
-?>
-  <tr>
-    <td><div align="center"><?php echo $result["BorrowId"];?></div></td>
-    <td><?php echo $result["LibrarianId"];?></td>
-    <td><?php echo $result["Date_of_borrow"];?></td>
-    <td><a href="./return.php?borrowid=<?php echo $result["BorrowId"];?>">คืนหนังสือ</td>
-  </tr>
-<?php
-}
-?>
-</table>
-<?php
-mysqli_close($conn);
-?>
-        <br>
-        <a href="clean_studentid.php">เสร็จสิ้นรายการ</a>
+        <form action="./save_student_use.php"  method="POST">
+        <br>รหัสนักศึกษา : <input type="text" name="studentid"><br>
+        <input type="submit" value="Submit">
+        </form>
+        <p>Content</p>
     </article>
 	  <aside>
 	    <p>More information</p>

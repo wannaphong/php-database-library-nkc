@@ -2,6 +2,7 @@
 /*
 เพิ่มข้อมูลบรรรักษ์
 */
+require_once("is_login.php");
 require_once("db.php");
 $IDcard=$_POST['idcard'];
 $Name=$_POST['name'];

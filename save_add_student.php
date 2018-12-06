@@ -1,4 +1,5 @@
 <?php
+require_once("is_login.php");
 require_once("db.php");
 $name=$_POST['name'];
 $address=$_POST['address'];
