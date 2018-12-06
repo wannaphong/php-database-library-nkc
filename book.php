@@ -61,10 +61,10 @@ mysqli_close($conn);
     if (isset($_COOKIE['studentid']))
     {
         ?>
-        <form method="POST" action="./borrowbook.php">
+        <form method="GET" action="./borrowbook.php">
         <br>Book ID : <input type="text" name="bookid"><br>
         <input type="submit" value="Submit">
-        </form>
+        </form><br>
 <?php } ?>
 <a href="./add_book.php"><button>เพิ่มหนังสือ</button></a>
 </article>

@@ -13,8 +13,40 @@ $fine_cal=0;
 if($datetime1>$datetime2){
     $fine_cal=(int)$datetime1->diff($datetime2)->format("%a");
     $fine_cal=$fine*$fine_cal;
-    echo "ค่าปรับ : ".$fine_cal;
-    
+    ?>
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><?php echo $name_web;?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+<?php include("js.php"); ?></head>
+<body>
+    <?php include('header_web.php');?>
+    <?php include('nav.php');?>
+    <main>
+      <article>
+        <h1>ระบบคิดค่าปรับ</h1>
+        <p>มีค่าปรับ จำนวน <?php echo $fine_cal; ?></p>
+        <a href="./return.php?borrowid=<?php echo $id; ?>&damages=<?php echo $fine_cal; ?>"><button>เรียบร้อย</button></a>
+    </article>
+    </main>
+    <footer>Copyright <?php echo $name_web;?></footer>
+</body>
+</html>
+    <?php
 }
-echo '<a href="./return.php?borrowid='.$id.'&damages='.$fine_cal.'">คืนหนังสือ</a>';
+else{
+    ?>
+    <html>
+<head>
+<META HTTP-EQUIV="Refresh" CONTENT="0;URL=./return.php?borrowid=<?php echo $id; ?>&damages=<?php echo $fine_cal; ?>">
+</head>
+</html>
+<?php
+}
+
 ?>

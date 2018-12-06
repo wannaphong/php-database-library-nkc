@@ -1,5 +1,5 @@
 <nav>
-      <a href="./">Home</a>
+      <a href="./">หน้าหลัก</a>
       <?php
       if (isset($_COOKIE['user']))
       {
@@ -10,10 +10,10 @@
         if(is_admin()){
           echo '<a href="librarian.php">บรรณารักษ์</a>';
         }
-        echo '<a href="logout.php">Logout</a>';
+        echo '<a href="logout.php">ออกจากระบบ</a>';
       }
       else{
-        echo '<a href="login.php">Login</a>';
+        echo '<a href="login.php">เข้าสู่ระบบ</a>';
       }
       ?>
 </nav>
