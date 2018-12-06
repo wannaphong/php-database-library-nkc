@@ -39,7 +39,6 @@ require_once("config.php");
         <br>รหัสนักศึกษา : <input type="number" name="studentid"><br>
         <input type="submit" value="Submit">
         </form>
-        <p>Content</p>
     </article>
     </main>
     <footer>Copyright  <?php echo $name_web;?></footer>
