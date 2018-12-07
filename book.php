@@ -31,6 +31,7 @@ require_once("config.php");
         <tr>
         <th> <div align="center">ชื่อหนังสือ</div></th>
         <th> <div align="center">ผู้เขียน</div></th>
+        <th> <div align="center">ลบหนังสือ</div></th>
     </tr>
     <?php
     while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
@@ -39,6 +40,7 @@ require_once("config.php");
     <tr>
         <td><div align="center"><?php echo $result["Namebooks"];?></div></td>
         <td><?php echo $result["Author"];?></td>
+        <td><a href="./del_book.php?bookid=<?php echo $result["BookId"];?>"><button onclick="return confirm('คุณแน่ใจว่าต้องการลบ ?')">คลิก</button></a></td>
         <?php
         if (isset($_COOKIE['studentid']))
         {
