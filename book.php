@@ -83,7 +83,7 @@ mysqli_close($conn);
         <input type="submit" value="Submit">
         </form><br>
 <?php } ?>
-<a href="./add_book.php"><button>เพิ่มหนังสือ</button></a>
+<a href="./add_book.php"><button>เพิ่มหนังสือ</button></a><br><br>
 </article>
     </main>
     <footer>Copyright <?php echo $name_web;?></footer>

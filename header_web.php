@@ -1,3 +1,3 @@
 <header>
-    <?php echo $name_web;?>
+    <img src="7.png" class="responsive">
 </header>

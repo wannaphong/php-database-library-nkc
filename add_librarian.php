@@ -20,9 +20,9 @@ require_once("config.php");
         <form action="./save_add_librarian.php"  method="POST">
         <table>
         <tr>
-        <td>ชื่อ :</td>  <td><input type="text" name="name"></td></tr>
+        <td>ชื่อ :</td>  <td><input type="text" name="name" required></td></tr>
         <tr><td>ที่อยู่ :</td> <td><input type="text" name="address"></td></tr>
-        <tr><td>IDcard :</td> <td><input type="text" name="idcard"></td></tr>
+        <tr><td>IDcard :</td> <td><input type="text" name="idcard" required></td></tr>
         <tr>
             <td>เพศ :</td>
             <td>
@@ -33,8 +33,8 @@ require_once("config.php");
             </td>
         </tr>
         <tr><td>เบอร์ :</td> <td><input type="tel" name="phone"></td></tr>
-        <tr><td>User :</td> <td><input type="text" name="user"></td></tr>
-        <tr><td>Password :</td> <td><input type="password" name="pass"></td></tr>
+        <tr><td>User :</td> <td><input type="text" name="user" required></td></tr>
+        <tr><td>Password :</td> <td><input type="password" name="pass" required></td></tr>
         <tr><td><input type="submit" value="Submit"></td></tr></table>
         </form>
         <br>

@@ -16,8 +16,8 @@
         echo '<a href="login.php">เข้าสู่ระบบ</a>';
       }
       ?>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">V
-    <i class="fa fa-bars"></i>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars">V</i>
   </a>
 </nav>
 <a href="javascript: history.go(-1)"><< ย้อนกลับ</a>

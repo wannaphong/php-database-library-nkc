@@ -15,19 +15,18 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1>Login</h1>
         <?php if(!empty($_GET['loginfall'])){
             ?>
             <h2>User/Password ไม่ถูกต้อง</h2>
         <?php }
         ?>
         <form method="POST" action="check_login.php">
-        <table>
-        <tr>
-        <td>User</td><td><input type="text" name="user"></td></tr>
-        <tr><td>Password</td><td><input type="password" name="password"></td></tr>
-        <tr><td><input type="submit" value="Submit"></td></tr>
-</table>
+<div class="login">
+    <input type="text" placeholder="👤 Username" id="username" name="user" required>  
+  <input type="password" placeholder="🔑 password" id="password" name="password" required> 
+  <input type="submit" value="Sign In">
+</div>
+<div class="shadow"></div>
         </form>
     </article>
     </main>

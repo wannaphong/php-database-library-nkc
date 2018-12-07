@@ -21,9 +21,9 @@ require_once("config.php");
         <form action="./save_add_student.php"  method="POST">
         <table>
         <tr>
-        <tr><td>ชื่อ :</td> <td><input type="text" name="name"></td></tr>
-        <tr><td>ที่อยู่ :</td> <td><input type="text" name="address"></td></tr>
-        <tr><td>ปีเดือนวันเกิด :</td> <td><input type="date" name="dob"></td></tr>
+        <tr><td>ชื่อ :</td> <td><input type="text" name="name" required></td></tr>
+        <tr><td>ที่อยู่ :</td> <td><input type="text" name="address" required></td></tr>
+        <tr><td>ปีเดือนวันเกิด :</td> <td><input type="date" name="dob" required></td></tr>
         <tr>
             <td>เพศ :</td>
             <td>

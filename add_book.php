@@ -24,9 +24,9 @@ require_once("config.php");
         <table>
         <tr>
             <td>ชื่อ :</td> 
-            <td><input type="text" name="namebook"></td>
+            <td><input type="text" name="namebook" required></td>
         </tr><tr>
-        <td>ผู้เขียน :</td> <td><input type="text" name="author"></td></tr>
+        <td>ผู้เขียน :</td> <td><input type="text" name="author" required></td></tr>
         <tr>
             <td>หมวดหมู่ :</td>
             <td>
