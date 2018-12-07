@@ -29,6 +29,7 @@ require_once("config.php");
     ?>
     <table border="1">
         <tr>
+        <th> <div align="center">รหัส</div></th>
         <th> <div align="center">ชื่อหนังสือ</div></th>
         <th> <div align="center">ผู้เขียน</div></th>
         <th> <div align="center">ลบหนังสือ</div></th>
@@ -38,6 +39,7 @@ require_once("config.php");
     {
     ?>
     <tr>
+        <td><div align="center"><?php echo $result["BookId"];?></div></td>
         <td><div align="center"><?php echo $result["Namebooks"];?></div></td>
         <td><?php echo $result["Author"];?></td>
         <td><a href="./del_book.php?bookid=<?php echo $result["BookId"];?>"><button onclick="return confirm('คุณแน่ใจว่าต้องการลบ ?')">คลิก</button></a></td>

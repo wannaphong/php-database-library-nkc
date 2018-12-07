@@ -31,7 +31,7 @@ if($datetime1>$datetime2){
       <article>
         <h1>ระบบคิดค่าปรับ</h1>
         <p>มีค่าปรับ จำนวน <?php echo $fine_cal; ?></p>
-        <a href="./return.php?borrowid=<?php echo $id; ?>&damages=<?php echo $fine_cal; ?>"><button>เรียบร้อย</button></a>
+        <a href="./return.php?borrowid=<?php echo $id; ?>&Fine=<?php echo $fine_cal; ?>"><button>เรียบร้อย</button></a>
     </article>
     </main>
     <footer>Copyright <?php echo $name_web;?></footer>
@@ -43,7 +43,7 @@ else{
     ?>
     <html>
 <head>
-<META HTTP-EQUIV="Refresh" CONTENT="0;URL=./return.php?borrowid=<?php echo $id; ?>&damages=<?php echo $fine_cal; ?>">
+<META HTTP-EQUIV="Refresh" CONTENT="0;URL=./return.php?borrowid=<?php echo $id; ?>&Fine=<?php echo $fine_cal; ?>">
 </head>
 </html>
 <?php

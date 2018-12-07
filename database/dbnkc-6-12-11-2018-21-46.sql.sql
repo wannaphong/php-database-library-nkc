@@ -30,7 +30,7 @@ CREATE TABLE `Bookreturn` (
   `ReturnId` int(11) NOT NULL,
   `BorrowId` int(11) NOT NULL,
   `Date_of_Return` date NOT NULL,
-  `Damages` int(11) NOT NULL
+  `Fine` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

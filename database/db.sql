@@ -13,14 +13,17 @@ CREATE TABLE `Librarian`(
  `username` text NOT NULL,
  `password` text NOT NULL,
  `Name` text NOT NULL,
- `Address` text, 
+ `Address` text,
+ `status` text,
+ `Phone` VARCHAR(10) NOT NULL,
+ `Gender` text NOT NULL,
  PRIMARY KEY (`LibrarianId`)
  );
 
 CREATE TABLE `Bookreturn` ( `ReturnId` int(11) NOT NULL AUTO_INCREMENT,
 `BorrowId` int references `Borrow`(`BorrowId`) ON UPDATE CASCADE ON DELETE CASCADE,
  `Date_of_Return` date NOT NULL,
-`Damages` int,
+`Fine` int,
  PRIMARY KEY (`ReturnId`) 
 );
 
@@ -41,3 +44,5 @@ CREATE TABLE `Borrow` (
 `Deadlines` date NOT NULL,
 PRIMARY KEY (`BorrowId`)
 );
+
+CREATE OR REPLACE VIEW student_not_return AS SELECT * FROM Borrow WHERE BorrowId NOT IN (SELECT BorrowId FROM Bookreturn);

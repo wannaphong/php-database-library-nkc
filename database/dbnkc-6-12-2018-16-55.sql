@@ -30,14 +30,14 @@ CREATE TABLE `Bookreturn` (
   `ReturnId` int(11) NOT NULL,
   `BorrowId` int(11) NOT NULL,
   `Date_of_Return` date NOT NULL,
-  `Damages` int(11) NOT NULL
+  `Fine` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `Bookreturn`
 --
 
-INSERT INTO `Bookreturn` (`ReturnId`, `BorrowId`, `Date_of_Return`, `Damages`) VALUES
+INSERT INTO `Bookreturn` (`ReturnId`, `BorrowId`, `Date_of_Return`, `Fine`) VALUES
 (9, 1, '2018-12-06', 5),
 (10, 2, '2018-12-06', 0),
 (11, 3, '2018-12-06', 0),
