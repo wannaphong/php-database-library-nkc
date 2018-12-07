@@ -17,6 +17,7 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
+      <h1>รายการหนังสือ</h1>
     <?php
         require("db.php");
 	    $sql = "SELECT * FROM Books";
