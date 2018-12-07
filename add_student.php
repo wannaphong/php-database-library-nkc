@@ -24,7 +24,15 @@ require_once("config.php");
         <tr><td>ชื่อ :</td> <td><input type="text" name="name"></td></tr>
         <tr><td>ที่อยู่ :</td> <td><input type="text" name="address"></td></tr>
         <tr><td>ปีเดือนวันเกิด :</td> <td><input type="date" name="dob"></td></tr>
-        <tr><td>เพศ :</td> <td><input type="text" name="gender"></td></tr>
+        <tr>
+            <td>เพศ :</td>
+            <td>
+            <select required name="gender">
+                <option value="ชาย">ชาย</option>
+                <option value="หญิง">หญิง</option>
+            </select>
+            </td>
+        </tr>
         <tr><td>เบอร์ :</td> <td><input type="tel" name="phone"></td></tr>
         <tr><td><input type="submit" value="Submit"></td></tr></table>
         </form><br>
