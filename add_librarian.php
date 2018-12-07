@@ -6,7 +6,7 @@ require_once("config.php");
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>เพิ่มข้อมูลบรรณารักษ์</title>
+    <title>เพิ่มข้อมูลบรรณารักษ์ : <?php echo $name_web;?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
@@ -24,6 +24,7 @@ require_once("config.php");
         <tr><td>ที่อยู่ :</td> <td><input type="text" name="address"></td></tr>
         <tr><td>IDcard :</td> <td><input type="text" name="idcard"></td></tr>
         <tr><td>เพศ :</td> <td><input type="text" name="gender"></td></tr>
+        <tr><td>เบอร์ :</td> <td><input type="tel" name="phone"></td></tr>
         <tr><td>User :</td> <td><input type="text" name="user"></td></tr>
         <tr><td>Password :</td> <td><input type="password" name="pass"></td></tr>
         <tr><td><input type="submit" value="Submit"></td></tr></table>
