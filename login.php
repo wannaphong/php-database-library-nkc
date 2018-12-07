@@ -16,6 +16,11 @@ require_once("config.php");
     <main>
       <article>
         <h1>Login</h1>
+        <?php if(!empty($_GET['loginfall'])){
+            ?>
+            <h2>User/Password ไม่ถูกต้อง</h2>
+        <?php }
+        ?>
         <form method="POST" action="check_login.php">
         <table>
         <tr>

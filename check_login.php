@@ -18,12 +18,12 @@ if(!empty($_POST['user'])&&!empty($_POST['password'])) {
         exit();
     }
     else{
-        header("Location: login.php");
+        header("Location: login.php?loginfall=1");
         exit();
     }
 }
 else{
-    header("Location: login.php");
+    header("Location: login.php?loginfall=1");
     exit();
 }
 ?>

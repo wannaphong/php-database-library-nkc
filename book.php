@@ -28,12 +28,24 @@ require_once("config.php");
          }
         else{
     ?>
+     <?php
+        if (isset($_COOKIE['studentid']))
+        {
+        ?>
+    <b>รหัสนักเรียน : <?php echo $_COOKIE['studentid']; ?></b>
+    <?php }?>
     <table border="1">
         <tr>
         <th> <div align="center">รหัส</div></th>
         <th> <div align="center">ชื่อหนังสือ</div></th>
         <th> <div align="center">รายละเอียด</div></th>
         <th> <div align="center">ลบหนังสือ</div></th>
+        <?php
+        if (isset($_COOKIE['studentid']))
+        {
+        ?>
+        <th> <div align="center">ยืมหนังสือ</div></th>
+        <?php }?>
     </tr>
     <?php
     while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
@@ -48,7 +60,7 @@ require_once("config.php");
         if (isset($_COOKIE['studentid']))
         {
         ?>
-        <td><a href="./borrowbook.php?bookid=<?php echo $result["BookId"];?>"><button>ยืมหนังสือ</button></a></td>
+        <td><a href="./borrowbook.php?bookid=<?php echo $result["BookId"];?>"><button>ยืม</button></a></td>
         <?php
         }
         ?>

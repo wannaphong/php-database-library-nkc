@@ -12,4 +12,6 @@ $sql = "INSERT INTO Books (NameBooks,Author,category,publisher) VALUES ('".$name
 mysqli_query($con,$sql);
 mysqli_commit($con);
 mysqli_close($con);
+header("Location: ./book.php");
+exit();
 ?>
