@@ -18,7 +18,7 @@ open_only_admin();
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1>ระบบจัดการบรรณารักษ์ห้องสมุด</h1>
+        <h1 align="center">ระบบจัดการบรรณารักษ์ห้องสมุด</h1>
         <a href="./add_librarian.php"><button>เพิ่มรายชื่อ</button></a><br>
         <?php
         require("db.php");
@@ -73,6 +73,6 @@ mysqli_close($conn);
 ?><br>
     </article>
     </main>
-    <footer>Copyright <?php echo $name_web;?></footer>
+    <?php include('footer_web.php');?>
 </body>
 </html>

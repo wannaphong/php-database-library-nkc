@@ -29,12 +29,12 @@ if($datetime1>$datetime2){
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1>ระบบคิดค่าปรับ</h1>
+        <h1 align="center">ระบบคิดค่าปรับ</h1>
         <p>มีค่าปรับ จำนวน <?php echo $fine_cal; ?></p>
         <a href="./return.php?borrowid=<?php echo $id; ?>&Fine=<?php echo $fine_cal; ?>"><button>เรียบร้อย</button></a>
     </article>
     </main>
-    <footer>Copyright <?php echo $name_web;?></footer>
+    <?php include('footer_web.php');?>
 </body>
 </html>
     <?php

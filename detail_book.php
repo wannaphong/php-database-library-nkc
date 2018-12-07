@@ -23,7 +23,7 @@ if($rowcount){
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1>รายละเอียดหนังสือ</h1>
+        <h1 align="center">รายละเอียดหนังสือ</h1>
         <table>
         <tr>
             <td>ชื่อ :</td>
@@ -45,7 +45,7 @@ if($rowcount){
       <br>
     </article>
     </main>
-    <footer>Copyright <?php echo $name_web;?></footer>
+    <?php include('footer_web.php');?>
 </body>
 </html>
 <?php

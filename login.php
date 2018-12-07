@@ -30,6 +30,6 @@ require_once("config.php");
         </form>
     </article>
     </main>
-    <footer>Copyright <?php echo $name_web;?></footer>
+    <?php include('footer_web.php');?>
 </body>
 </html>

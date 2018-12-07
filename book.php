@@ -17,7 +17,8 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-      <h1>รายการหนังสือ</h1>
+      <h1 align="center">รายการหนังสือ</h1>
+      <a href="./add_book.php"><button>เพิ่มหนังสือ</button></a><br><br>
     <?php
         require("db.php");
 	    $sql = "SELECT * FROM Books";
@@ -83,9 +84,8 @@ mysqli_close($conn);
         <input type="submit" value="Submit">
         </form><br>
 <?php } ?>
-<a href="./add_book.php"><button>เพิ่มหนังสือ</button></a><br><br>
 </article>
     </main>
-    <footer>Copyright <?php echo $name_web;?></footer>
+    <?php include('footer_web.php');?>
 </body>
 </html>

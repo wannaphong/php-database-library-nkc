@@ -17,7 +17,7 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1>เพิ่มข้อมูลนักเรียน</h1>
+        <h1 align="center">เพิ่มข้อมูลนักเรียน</h1>
         <form action="./save_add_student.php"  method="POST">
         <table>
         <tr>
@@ -38,6 +38,6 @@ require_once("config.php");
         </form><br>
     </article>
     </main>
-    <footer>Copyright <?php echo $name_web;?></footer>
+    <?php include('footer_web.php');?>
 </body>
 </html>

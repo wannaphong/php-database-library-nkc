@@ -32,7 +32,7 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1>ระบบยืมคืนหนังสือ</h1>
+        <h1 align="center">ระบบยืมคืนหนังสือ</h1>
         <?php
         ?>
         <form action="./save_student_use.php"  method="POST">
@@ -41,6 +41,7 @@ require_once("config.php");
         <td>รหัสนักเรียน :</td> <td><input type="number" name="studentid"></td></tr>
         <tr><td><input type="submit" value="Submit"></td></tr>
         </form>
+        <br><br>
     </article>
     </main>
     <footer>Copyright  <?php echo $name_web;?></footer>

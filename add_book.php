@@ -19,7 +19,7 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1>เพิ่มข้อมูลหนังสือ</h1>
+        <h1 align="center">เพิ่มข้อมูลหนังสือ</h1>
         <form action="./save_add_book.php"  method="POST">
         <table>
         <tr>
@@ -46,7 +46,7 @@ require_once("config.php");
         </tr>
         <tr>
         <td>สำนักพิมพ์ :</td> <td><input type="text" name="publisher"></td></tr><tr>
-        <td><input type="submit" value="Submit"></td></tr>
+        <td><input type="submit" value="บันทึก"></td></tr>
         </table><br>
         </form>
     </article>

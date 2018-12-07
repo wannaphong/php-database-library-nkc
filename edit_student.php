@@ -21,7 +21,7 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1>รายการยืมหนังสือที่ค้าง</h1>
+        <h1 align="center">รายการยืมหนังสือที่ค้าง</h1>
         <?php
         echo "รหัสนักเรียน : ".$st_id;
         ?>
@@ -56,6 +56,6 @@ mysqli_close($conn);
 ?>
     </article>
     </main>
-    <footer>Copyright <?php echo $name_web;?></footer>
+    <?php include('footer_web.php');?>
 </body>
 </html>

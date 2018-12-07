@@ -16,7 +16,7 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1>ระบบจัดการนักเรียนห้องสมุด</h1>
+        <h1 align="center">ระบบจัดการนักเรียนห้องสมุด</h1>
         <a href="./add_student.php"><button>เพิ่มรายชื่อ</button></a><br>
         <?php
         require("db.php");
@@ -63,6 +63,6 @@ mysqli_close($conn);
 ?><br>
     </article>
     </main>
-    <footer>Copyright <?php echo $name_web;?></footer>
+    <?php include('footer_web.php');?>
 </body>
 </html>

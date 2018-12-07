@@ -27,7 +27,7 @@ require_once("check_studentid.php");
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1>รายการยืมหนังสือ</h1>
+        <h1 align="center">รายการยืมหนังสือ</h1>
         <?php
         echo "รหัสนักเรียน : ".$_COOKIE['studentid']."<br>";
         ?>
@@ -70,6 +70,6 @@ mysqli_close($conn);
         <a href="clean_studentid.php"><button>เสร็จสิ้นรายการ</button></a><br><br>
     </article>
     </main>
-    <footer>Copyright <?php echo $name_web;?></footer>
+    <?php include('footer_web.php');?>
 </body>
 </html>

@@ -21,7 +21,7 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1>เปลี่ยนรหัสผ่านบรรณารักษ์</h1>
+        <h1 align="center">เปลี่ยนรหัสผ่านบรรณารักษ์</h1>
         <?php
         echo "รหัสบรรณารักษ์ : ".$st_id;
         ?>
@@ -52,6 +52,6 @@ mysqli_close($conn);
 ?>
     </article>
     </main>
-    <footer>Copyright <?php echo $name_web;?></footer>
+    <?php include('footer_web.php');?>
 </body>
 </html>
