@@ -39,10 +39,12 @@ require_once("config.php");
 $result=mysqli_fetch_array($query,MYSQLI_ASSOC)
 ?>
   <form action="./save_edit_librarian.php"  method="POST">
-        <br>ชื่อ : <input type="text" name="name" value="<?php echo $result['Name'];  ?>"><br>
-        ที่อยู่ : <input type="text" name="address" value="<?php echo $result['Address'];  ?>"><br>
-        <input type="hidden" name="id" value=<?php echo $st_id; ?>>
-        <input type="submit" value="Submit">
+  <input type="hidden" name="id" value=<?php echo $st_id; ?>>
+  <table>
+  <tr><td>ชื่อ :</td><td><input type="text" name="name" value="<?php echo $result['Name'];  ?>"></td></tr>
+  <tr><td>ที่อยู่ :</td><td><input type="text" name="address" value="<?php echo $result['Address'];  ?>"></td></tr>
+   <tr><td><input type="submit" value="Submit"></td></tr>
+        </table>
     </form>
 <?php
 }
