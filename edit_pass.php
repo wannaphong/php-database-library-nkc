@@ -39,9 +39,11 @@ require_once("config.php");
 $result=mysqli_fetch_array($query,MYSQLI_ASSOC)
 ?>
   <form action="./save_newpass.php"  method="POST">
-        Password : <input type="password" name="pass"><br>
-        <input type="hidden" name="id" value=<?php echo $st_id; ?>>
-        <input type="submit" value="Submit">
+  <input type="hidden" name="id" value=<?php echo $st_id; ?>>
+  <table>
+  <tr><td>Password : <input type="password" name="pass"></td></tr>
+  <tr><td><input type="submit" value="Submit"></td></tr>
+        </table>
     </form>
 <?php
 }
