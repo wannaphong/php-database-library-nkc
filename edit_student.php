@@ -11,7 +11,7 @@ require_once("config.php");
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ทดสอบ</title>
+    <title>แก้ไขข้อมูลนักเรียน : <?php echo $name_web;?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
@@ -21,7 +21,7 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1 align="center">รายการยืมหนังสือที่ค้าง</h1>
+        <h1 align="center">แก้ไขข้อมูลนักเรียน</h1>
         <?php
         echo "รหัสนักเรียน : ".$st_id;
         ?>
@@ -39,13 +39,15 @@ require_once("config.php");
 $result=mysqli_fetch_array($query,MYSQLI_ASSOC)
 ?>
   <form action="./save_edit_student.php"  method="POST">
-        <br>ชื่อ : <input type="text" name="name" value="<?php echo $result['Name'];  ?>"><br>
-        ที่อยู่ : <input type="text" name="address" value="<?php echo $result['Address'];  ?>"><br>
-        ปีเดือนวันเกิด : <input type="date" name="dob" value="<?php echo $result['DOB'];  ?>"><br>
-        เพศ : <input type="text" name="gender" value="<?php echo $result['Gender'];  ?>"><br>
-        เบอร์ : <input type="tel" name="phone" value="<?php echo $result['Phone'];  ?>"><br>
-        <input type="hidden" name="id" value=<?php echo $st_id; ?>>
-        <input type="submit" value="Submit">
+  <input type="hidden" name="id" value=<?php echo $st_id; ?> ?>
+  <table>
+  <tr><td>ชื่อ :</td><td><input type="text" name="name" value="<?php echo $result['Name'];  ?>"></td></tr>
+  <tr><td>ที่อยู่ :</td><td><textarea name="address"><?php echo $result['Address'];  ?></textarea></td></tr>
+  <tr><td>ปีเดือนวันเกิด :</td><td><input type="date" name="dob" value="<?php echo $result['DOB'];  ?>"></td></tr>
+  <tr><td>เพศ : </td><td><input type="text" name="gender" value="<?php echo $result['Gender'];  ?>"></td></tr>
+  <tr><td>เบอร์ : </td><td><input type="tel" name="phone" value="<?php echo $result['Phone'];  ?>"></td></tr>
+  <tr><td><input type="submit" value="Submit"></tr><td></td>
+        </table>
     </form>
 <?php
 }
