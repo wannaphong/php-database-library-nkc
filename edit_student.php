@@ -27,7 +27,7 @@ require_once("config.php");
         ?>
         <?php
         require("db.php");
-	    $sql = "SELECT * FROM Students WHERE id=".$st_id;//"SELECT * FROM student_not_return WHERE StudentId=".$_COOKIE['studentid'];
+	    $sql = "SELECT * FROM Students WHERE StudentId=".$st_id;//"SELECT * FROM student_not_return WHERE StudentId=".$_COOKIE['studentid'];
         $query = mysqli_query($con,$sql);
         $rowcount=mysqli_num_rows($query);
         if($rowcount== 0){

@@ -1,5 +1,5 @@
 CREATE TABLE `Students` ( 
-    `id` INT(11) NOT NULL AUTO_INCREMENT , 
+    `StudentId` INT(11) NOT NULL AUTO_INCREMENT , 
     `Name` TEXT NOT NULL , 
     `Address` TEXT NOT NULL , 
     `DOB` DATE NOT NULL , 

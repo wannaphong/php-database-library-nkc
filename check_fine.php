@@ -14,7 +14,7 @@ if($datetime1>$datetime2){
     $fine_cal=(int)$datetime1->diff($datetime2)->format("%a");
     $fine_cal=$fine*$fine_cal;
     ?>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -30,7 +30,7 @@ if($datetime1>$datetime2){
     <main>
       <article>
         <h1 align="center">ระบบคิดค่าปรับ</h1>
-        <p>มีค่าปรับ จำนวน <?php echo $fine_cal; ?></p>
+        <p>มีค่าปรับ จำนวน <?php echo $fine_cal; ?> บาท</p>
         <a href="./return.php?borrowid=<?php echo $id; ?>&Fine=<?php echo $fine_cal; ?>"><button>เรียบร้อย</button></a>
     </article>
     </main>
@@ -41,7 +41,7 @@ if($datetime1>$datetime2){
 }
 else{
     ?>
-    <html>
+<html>
 <head>
 <META HTTP-EQUIV="Refresh" CONTENT="0;URL=./return.php?borrowid=<?php echo $id; ?>&Fine=<?php echo $fine_cal; ?>">
 </head>

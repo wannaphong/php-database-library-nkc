@@ -2,7 +2,7 @@
 if(!empty($_POST['studentid'])) {
     require("db.php");
     $studentid=mysqli_real_escape_string($con,$_POST['studentid']);
-    $sql="select * from Students WHERE id=".$studentid;
+    $sql="select * from Students WHERE  StudentId=".$studentid;
     $result=mysqli_query($con,$sql);
     $rowcount=mysqli_fetch_array($result);
     if($rowcount){

@@ -47,11 +47,11 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 ?>
   <tr>
     <td><div align="center"><?php echo $result["Name"];?></div></td>
-    <td><?php echo $result["id"];?></td>
-    <td><a href="./student_borrow.php?stu_id=<?php echo $result["id"];?>">คลิก</a></td>
+    <td><?php echo $result["StudentId"];?></td>
+    <td><a href="./student_borrow.php?stu_id=<?php echo $result["StudentId"];?>">คลิก</a></td>
     <?php if(is_admin()){ ?><td>
-    <a href="./edit_student.php?stu_id=<?php echo $result["id"];?>">คลิก</a></td>
-    <td><a href="./del_student.php?stu_id=<?php echo $result["id"];?>" onclick="return confirm('คุณแน่ใจว่าต้องการลบ ?')">คลิก</a></td><?php } ?>
+    <a href="./edit_student.php?stu_id=<?php echo $result["StudentId"];?>">คลิก</a></td>
+    <td><a href="./del_student.php?stu_id=<?php echo $result["StudentId"];?>" onclick="return confirm('คุณแน่ใจว่าต้องการลบ ?')">คลิก</a></td><?php } ?>
   </tr>
 <?php
 }
