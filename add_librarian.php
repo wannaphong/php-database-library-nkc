@@ -40,6 +40,6 @@ require_once("config.php");
         <br>
     </article>
     </main>
-    <footer>Copyright ทดสอบ</footer>
+    <?php include('footer_web.php');?>
 </body>
 </html>

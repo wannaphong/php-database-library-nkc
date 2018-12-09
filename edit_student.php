@@ -44,7 +44,16 @@ $result=mysqli_fetch_array($query,MYSQLI_ASSOC)
   <tr><td>ชื่อ :</td><td><input type="text" name="name" value="<?php echo $result['Name'];  ?>"></td></tr>
   <tr><td>ที่อยู่ :</td><td><textarea name="address"><?php echo $result['Address'];  ?></textarea></td></tr>
   <tr><td>ปีเดือนวันเกิด :</td><td><input type="date" name="dob" value="<?php echo $result['DOB'];  ?>"></td></tr>
-  <tr><td>เพศ : </td><td><input type="text" name="gender" value="<?php echo $result['Gender'];  ?>"></td></tr>
+  <!--<tr><td>เพศ : </td><td><input type="text" name="gender" value="<?php echo $result['Gender'];  ?>"></td></tr> -->
+  <tr>
+            <td>เพศ :</td>
+            <td>
+            <select required name="gender">
+                <option value="ชาย">ชาย</option>
+                <option value="หญิง">หญิง</option>
+            </select>
+            </td>
+</tr>
   <tr><td>เบอร์ : </td><td><input type="tel" name="phone" value="<?php echo $result['Phone'];  ?>"></td></tr>
   <tr><td><input type="submit" value="Submit"></tr><td></td>
         </table>

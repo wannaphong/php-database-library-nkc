@@ -41,6 +41,9 @@ if($rowcount){
             <td>สำนักพิมพ์ :</td>
             <td><?php echo $rowcount["Publisher"]; ?></td>
         </tr>
+        <tr>
+        <td><a href="./edit_book.php?id=<?php echo $rowcount['BookId']; ?>">แก้ไข</td>
+        </tr>
         </table>
       <br>
     </article>
