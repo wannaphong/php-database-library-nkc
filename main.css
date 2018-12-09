@@ -24,6 +24,7 @@ table {
     width: 100%;
     margin: 0 auto;
     position: relative;
+    text-align: center;
   }
   table * {
     position: relative;
@@ -44,10 +45,10 @@ table {
     border: 0;
   }
   table td, table th {
-    text-align: left;
+    text-align: center;
   }
   table td.l, table th.l {
-    text-align: right;
+    text-align: center;
   }
   table td.c, table th.c {
     text-align: center;
