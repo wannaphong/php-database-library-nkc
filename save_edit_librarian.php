@@ -9,7 +9,7 @@ $address=$_POST['address'];
 $sql = "UPDATE Librarian SET Name = '".$name."',Address = '".$address."' WHERE LibrarianId=".$id;
 $query=mysqli_query($con,$sql);
 if($query) {
-    mysqli_close($con);
+    
     header("Location: ./librarian.php");
     exit();
 }

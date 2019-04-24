@@ -12,7 +12,7 @@ $publisher=$_POST['publisher'];
 $sql = "UPDATE Books SET NameBooks='".$namebook."',Author='".$author."',category='".$category."',publisher='".$publisher."' where BookId=".$id;
 mysqli_query($con,$sql);
 mysqli_commit($con);
-mysqli_close($con);
+
 header("Location: ./book.php");
 exit();
 ?>

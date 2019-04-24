@@ -9,7 +9,7 @@ if(!empty($_POST['studentid'])) {
         $cookie_name = "studentid";
         $cookie_value = $studentid;
         setcookie($cookie_name, $cookie_value, time() + (3600), "/"); // 3600 วินาที = 1ชั่วโมง 
-        mysqli_close($con);
+        
         header("Location: borrow.php");
         exit();
     }

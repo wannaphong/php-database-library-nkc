@@ -16,7 +16,7 @@ $Address=$_POST['address'];
 $sql = "INSERT INTO Librarian (IDcard,username,password,Name,Address,status,Phone,Gender) VALUES ('".$IDcard."', '".$user."', '".$pass."','".$Name."','".$Address."','user','".$phone."','".$Gender."')";
 mysqli_query($con,$sql);
 mysqli_commit($con);
-mysqli_close($con);
+
 header("Location: ./librarian.php");
 exit();
 ?>

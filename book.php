@@ -72,7 +72,7 @@ require_once("config.php");
     ?>
 </table>
 <?php
-mysqli_close($conn);
+
 ?>
 <br>
 <?php

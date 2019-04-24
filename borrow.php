@@ -64,7 +64,7 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 ?>
 </table>
 <?php
-mysqli_close($conn);
+
 ?>
         <a href="book.php"><button>ยืมหนังสือ</button></a><br>
         <a href="clean_studentid.php"><button>เสร็จสิ้นรายการ</button></a><br><br>

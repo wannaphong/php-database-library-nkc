@@ -1,3 +1,6 @@
 CREATE OR REPLACE VIEW student_not_return AS SELECT * FROM Borrow WHERE BorrowId NOT IN (SELECT BorrowId FROM Bookreturn)
 
 เลือกทั้งหมดในตาราง Borrow ถ้า BorrowId ไม่อยู่ใน BorrowId จากตาราง Bookreturn
+
+
+CREATE OR REPLACE VIEW student_not_return AS SELECT * FROM Borrow WHERE Date_of_return IS NULL

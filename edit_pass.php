@@ -50,7 +50,7 @@ $result=mysqli_fetch_array($query,MYSQLI_ASSOC)
 ?>
 </table>
 <?php
-mysqli_close($conn);
+
 ?>
     </article>
     </main>

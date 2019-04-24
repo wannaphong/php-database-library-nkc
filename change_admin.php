@@ -8,7 +8,7 @@ $id=$_POST["id"];
 $sql = "UPDATE Librarian SET status='".$right."'  WHERE LibrarianId=".$id;
 $query=mysqli_query($con,$sql);
 if($query) {
-    mysqli_close($con);
+    
     header("Location: ./librarian.php");
     exit();
 }

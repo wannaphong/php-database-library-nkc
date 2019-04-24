@@ -9,7 +9,7 @@ $new_date_format = $dt->format('Y-m-d');
 $sql = "INSERT INTO Borrow (LibrarianId,BookId,StudentId,Date_of_borrow,Deadlines) VALUES (".$_COOKIE['user'].", '".$id."', '".$_COOKIE["studentid"]."',NOW(),'".$new_date_format."')";
 mysqli_query($con,$sql);
 mysqli_commit($con);
-mysqli_close($con);
+
 header("Location: borrow.php");
 exit();
 ?>

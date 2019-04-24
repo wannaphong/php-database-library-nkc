@@ -5,7 +5,7 @@ require_once("db.php");
 require("config.php");
 $sql = "DELETE FROM Students WHERE StudentId=".$id;
 $query = mysqli_query($con,$sql);
-mysqli_close($con);
+
 header("Location: student.php");
 exit; 
 ?>
