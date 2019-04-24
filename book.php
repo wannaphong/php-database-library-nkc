@@ -38,6 +38,7 @@ require_once("config.php");
     <table border="1">
         <tr>
         <th> <div align="center">รหัส</div></th>
+        <th> <div align="center">รูป</div></th>
         <th> <div align="center">ชื่อหนังสือ</div></th>
         <th> <div align="center">รายละเอียด</div></th>
         <th> <div align="center">ลบหนังสือ</div></th>
@@ -54,6 +55,12 @@ require_once("config.php");
     ?>
     <tr>
         <td><div align="center"><?php echo $result["BookId"];?></div></td>
+        <td><div align="center"><?php 
+        if(!IsNullOrEmptyString($result["image"])){
+            echo '<img src="images/'.$result["image"].'">';
+        }
+        echo $result["Namebooks"];
+        ?></div></td>
         <td><div align="center"><?php echo $result["Namebooks"];?></div></td>
         <td><a href="./detail_book.php?bookid=<?php echo $result["BookId"];?>"><button>รายละเอียด</button></a></td>
         <td><a href="./del_book.php?bookid=<?php echo $result["BookId"];?>"><button onclick="return confirm('คุณแน่ใจว่าต้องการลบ ?')">คลิก</button></a></td>

@@ -20,7 +20,7 @@ require_once("config.php");
     <main>
       <article>
         <h1 align="center">เพิ่มข้อมูลหนังสือ</h1>
-        <form action="./save_add_book.php"  method="POST">
+        <form action="./save_add_book.php"  method="POST" enctype="multipart/form-data">
         <table>
         <tr>
             <td>ชื่อ :</td> 
@@ -43,6 +43,10 @@ require_once("config.php");
                 <option value="ประวัติศาสตร์">ประวัติศาสตร์</option>
             </select>
             </td>
+        </tr>
+        <tr>
+            <td>ไฟล์ :</td> 
+            <td><input type="file" name="image"></td>
         </tr>
         <tr>
         <td>สำนักพิมพ์ :</td> <td><input type="text" name="publisher"></td></tr><tr>
