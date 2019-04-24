@@ -59,7 +59,6 @@ require_once("config.php");
         if(!IsNullOrEmptyString($result["image"])){
             echo '<img src="images/'.$result["image"].'">';
         }
-        echo $result["Namebooks"];
         ?></div></td>
         <td><div align="center"><?php echo $result["Namebooks"];?></div></td>
         <td><a href="./detail_book.php?bookid=<?php echo $result["BookId"];?>"><button>รายละเอียด</button></a></td>

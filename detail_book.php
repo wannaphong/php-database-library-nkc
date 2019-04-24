@@ -29,6 +29,11 @@ if($rowcount){
             <td>ชื่อ :</td>
             <td><?php echo $rowcount["Namebooks"]; ?></td>
         </tr>
+        <tr><td>รูปภาพ :</td><td><?php 
+        if(!IsNullOrEmptyString($rowcount["image"])){
+            echo '<img src="images/'.$rowcount["image"].'">';
+        }
+        ?></td></tr>
         <tr>
             <td>ผู้เขียน :</td>
             <td><?php echo $rowcount["Author"]; ?></td>
