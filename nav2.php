@@ -1,7 +1,7 @@
 <!--<a href="javascript: history.go(-1)"><< ย้อนกลับ</a>-->
-<nav class="white" role="navigation">
+<nav class="teal" role="navigation" name="go" >
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Library</a>
+      <a id="logo-container" href="#" class="brand-logo text-white">Library</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="./">หน้าหลัก</a></li>
         <li><a href="./search.php">ค้นหา</a></li>

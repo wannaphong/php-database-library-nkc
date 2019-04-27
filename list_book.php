@@ -18,17 +18,13 @@ $name=$_GET["namebook"];
       
     <?php
         require("db.php");
-	    $sql = "SELECT * FROM Books LIKE %".$name."%";
+        $sql = "SELECT * FROM book_view WHERE Namebooks LIKE '%$name%'";
+        //echo $sql;
         $query = mysqli_query($con,$sql);
-        $rowcount=mysqli_num_rows($query);
-        if($rowcount== 0){
-            echo "<br>ไม่มีหนังสือให้ยืม";
-         }
-        else{
         if (isset($_COOKIE['studentid']))
         {
         ?>
-        <h2 align="center">รายการหนังสือ</h1>
+        <h3 align="center">รายการหนังสือ</h1>
       <a href="./add_book.php"><button>เพิ่มหนังสือ</button></a>
     <b>รหัสนักเรียน : <?php echo $_COOKIE['studentid']; ?></b>
     <?php }?>
@@ -39,7 +35,6 @@ $name=$_GET["namebook"];
         <th>รูป</th>
         <th>ชื่อหนังสือ</th>
         <th>รายละเอียด</th>
-        <th>ลบหนังสือ</th>
         <?php
         if (isset($_COOKIE['studentid']))
         {
@@ -61,7 +56,6 @@ $name=$_GET["namebook"];
         ?></td>
         <td><?php echo $result["Namebooks"];?></td>
         <td><a href="./detail_book.php?bookid=<?php echo $result["BookId"];?>"><button>รายละเอียด</button></a></td>
-        <td><a href="./del_book.php?bookid=<?php echo $result["BookId"];?>"><button onclick="return confirm('คุณแน่ใจว่าต้องการลบ ?')">คลิก</button></a></td>
         <?php
         if (isset($_COOKIE['studentid']))
         {
@@ -73,7 +67,7 @@ $name=$_GET["namebook"];
   </tr>
     <?php
     }
-    }
+    
     ?>
 </table>
 <?php

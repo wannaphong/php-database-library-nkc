@@ -19,7 +19,7 @@ require_once("config.php");
     <?php include('nav.php');?>
     <div class="row">
     <div class="container center">
-        <h2 align="center">แก้ไขข้อมูลนักเรียน</h1>
+        <h3 align="center">แก้ไขข้อมูลนักเรียน</h1>
         <?php
         echo "รหัสนักเรียน : ".$st_id;
         ?>

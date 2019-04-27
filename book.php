@@ -15,7 +15,7 @@ require_once("config.php");
 <?php include('nav.php');?>
     <div class="row">
     <div class="container">
-      <h2 align="center">รายการหนังสือ</h1>
+      <h3 align="center">รายการหนังสือ</h1>
       <a href="./add_book.php"><button>เพิ่มหนังสือ</button></a>
     <?php
         require("db.php");

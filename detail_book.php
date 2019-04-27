@@ -1,9 +1,9 @@
 <?php
-require_once("is_login.php");
+//require_once("is_login.php");
 require_once("config.php");
 $idbook=$_GET["bookid"];
 require_once("db.php");
-$sql = "SELECT * FROM `Books` WHERE BookId=".$idbook;
+$sql = "SELECT * FROM `book_view` WHERE BookId=".$idbook;
 $result=mysqli_query($con,$sql);
 $rowcount=mysqli_fetch_array($result);
 if($rowcount){
@@ -14,46 +14,38 @@ if($rowcount){
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>รายละเอียดหนังสือ : <?php echo $name_web;?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-<?php include("js.php"); ?></head>
+    <?php include("header_web.php"); ?>
+    <?php include("js.php"); ?>
+</head>
 <body>
-    <?php include('header_web.php');?>
     <?php include('nav.php');?>
-    <main>
-      <article>
-        <h2 align="center">รายละเอียดหนังสือ</h1>
-        <table>
-        <tr>
-            <td>ชื่อ :</td>
-            <td><?php echo $rowcount["Namebooks"]; ?></td>
-        </tr>
-        <tr><td>รูปภาพ :</td><td><?php 
+    <div class="row">
+    <div class="container">
+        <h3 align="center">รายละเอียดหนังสือ</h1>
+        <div class="row">
+        <div class="col s5">
+        <?php 
         if(!IsNullOrEmptyString($rowcount["image"])){
-            echo '<img src="images/'.$rowcount["image"].'">';
+            echo '<img src="images/'.$rowcount["image"].'" class="responsive-img">';
         }
-        ?></td></tr>
-        <tr>
-            <td>ผู้เขียน :</td>
-            <td><?php echo $rowcount["Author"]; ?></td>
-        </tr>
-        <tr>
-            <td>หมวดหมู่ :</td>
-            <td><?php echo $rowcount["category"]; ?></td>
-        </tr>
-        <tr>
-            <td>สำนักพิมพ์ :</td>
-            <td><?php echo $rowcount["Publisher"]; ?></td>
-        </tr>
-        <tr>
-        <td><a href="./edit_book.php?id=<?php echo $rowcount['BookId']; ?>">แก้ไข</td>
-        </tr>
-        </table>
-      <br>
-    </article>
-    </main>
-    <?php include('footer_web.php');?>
+        ?>
+        </div>
+      <div class="col s7">
+          <h4><?php echo $rowcount["Namebooks"]; ?></h4><br>
+          
+          ผู้เขียน : <?php echo $rowcount["Author"]; ?><br>
+          หมวดหมู่ : <?php echo $rowcount["name"]; ?><br>
+          สำนักพิมพ์ : <?php echo $rowcount["Publisher"]; ?>
+          <?php
+        if (isset($_COOKIE['user'])){ ?>
+        <a href="./edit_book.php?id=<?php echo $rowcount['BookId']; ?>">แก้ไข
+        <?php } ?>
+    </span>
+    </div>
+        </div>
+        </div>
+        </div>
+    <?php include('footer.php');?>
 </body>
 </html>
 <?php

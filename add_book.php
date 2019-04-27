@@ -17,7 +17,7 @@ require_once("config.php");
     <?php include('nav.php');?>
     <div class="row">
     <div class="container">
-        <h2 align="center">เพิ่มข้อมูลหนังสือ</h1>
+        <h3 align="center">เพิ่มข้อมูลหนังสือ</h1>
         <form action="./save_add_book.php"  method="POST" enctype="multipart/form-data">
         <table>
         <tr>
@@ -28,7 +28,7 @@ require_once("config.php");
         <tr>
             <td>หมวดหมู่ :</td>
             <td>
-            <select required>
+            <select required name="category">
             <?php
             require("db.php");
             $sql = "SELECT * FROM Category";

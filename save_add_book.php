@@ -31,17 +31,17 @@ if(isset($_FILES['image'])){
     
     if(empty($errors)==true){
        move_uploaded_file($file_tmp,"images/".$file_name);
-       $sql="INSERT INTO Books (NameBooks,Author,category,publisher,image) VALUES ('".$namebook."', '".$author."', '".$category."','".$publisher."','".$file_name."')";
+       $sql="INSERT INTO Books (NameBooks,Author,categoryid,publisher,image) VALUES ('".$namebook."', '".$author."', $category,'".$publisher."','".$file_name."')";
        //echo "Success";
     }else{
        print_r($errors);
     }
 }
 else
-$sql = "INSERT INTO Books (NameBooks,Author,category,publisher) VALUES ('".$namebook."', '".$author."', '".$category."','".$publisher."')";
+$sql = "INSERT INTO Books (NameBooks,Author,categoryid,publisher) VALUES ('".$namebook."', '".$author."',$category,'".$publisher."')";
 mysqli_query($con,$sql);
 mysqli_commit($con);
-
-header("Location: ./book.php");
-exit();
+echo $sql;
+//header("Location: ./book.php");
+//exit();
 ?>

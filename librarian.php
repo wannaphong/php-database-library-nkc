@@ -14,7 +14,7 @@ open_only_admin();
 <body>
     <?php include('nav.php');?>
     <div class="container">
-        <h2 align="center">ระบบจัดการบรรณารักษ์ห้องสมุด</h1>
+        <h3 align="center">ระบบจัดการบรรณารักษ์ห้องสมุด</h1>
         <a href="./add_librarian.php"><button>เพิ่มรายชื่อ</button></a><br>
         <?php
         require("db.php");

@@ -29,7 +29,7 @@ require_once("config.php");
     <?php include('nav.php');?>
     <div class="row">
     <div class="container">
-        <h2 align="center">ระบบยืมคืนหนังสือ</h1>
+        <h3 align="center">ระบบยืมคืนหนังสือ</h1>
         <form action="./save_student_use.php"  method="POST">
         <table>
         <tr>

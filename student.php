@@ -14,7 +14,7 @@ require_once("config.php");
     <?php include('nav.php');?>
     <div class="row">
     <div class="container">
-        <h2 align="center">ระบบจัดการนักเรียนห้องสมุด</h1>
+        <h3 align="center">ระบบจัดการนักเรียนห้องสมุด</h1>
         <a href="./add_student.php"><button>เพิ่มรายชื่อ</button></a><br>
         <?php
         require("db.php");

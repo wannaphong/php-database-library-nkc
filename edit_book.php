@@ -18,16 +18,14 @@ if($rowcount){
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>แก้ไขข้อมูลหนังสือ : <?php echo $name_web;?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-<?php include("js.php"); ?></head>
+    <?php include("header_web.php"); ?>
+    <?php include("js.php"); ?>
+</head>
 <body>
-    <?php include('header_web.php');?>
     <?php include('nav.php');?>
     <main>
       <article>
-        <h2 align="center">แก้ไขข้อมูลหนังสือ</h1>
+        <h3 align="center">แก้ไขข้อมูลหนังสือ</h1>
         <form action="./save_edit_book.php"  method="POST">
         <table>
         <tr>
@@ -61,7 +59,7 @@ if($rowcount){
         </form>
     </article>
     </main>
-    <?php include('footer_web.php');?>
+    <?php include('footer.php');?>
 </body>
 </html>
 <?php

@@ -15,7 +15,7 @@ require_once("config.php");
     <?php include('nav.php');?>
     <div class="row">
     <div class="container">
-        <h2 align="center">เพิ่มข้อมูลนักเรียน</h1>
+        <h3 align="center">เพิ่มข้อมูลนักเรียน</h1>
         <form action="./save_add_student.php"  method="POST">
         <table>
         <tr>

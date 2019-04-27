@@ -21,7 +21,7 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-        <h2 align="center">รายการยืมหนังสือที่ค้าง</h1>
+        <h3 align="center">รายการยืมหนังสือที่ค้าง</h1>
         <?php
         echo "รหัสนักเรียน : ".$st_id;
         ?>

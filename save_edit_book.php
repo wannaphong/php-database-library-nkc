@@ -9,7 +9,7 @@ $namebook=$_POST['namebook'];
 $author=$_POST['author'];
 $category=$_POST['category'];
 $publisher=$_POST['publisher'];
-$sql = "UPDATE Books SET NameBooks='".$namebook."',Author='".$author."',category='".$category."',publisher='".$publisher."' where BookId=".$id;
+$sql = "UPDATE Books SET NameBooks='".$namebook."',Author='".$author."',categoryid='".$category."',publisher='".$publisher."' where BookId=".$id;
 mysqli_query($con,$sql);
 mysqli_commit($con);
 

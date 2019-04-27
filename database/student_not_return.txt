@@ -4,3 +4,5 @@ CREATE OR REPLACE VIEW student_not_return AS SELECT * FROM Borrow WHERE BorrowId
 
 
 CREATE OR REPLACE VIEW student_not_return AS SELECT * FROM Borrow WHERE Date_of_return IS NULL
+
+CREATE OR REPLACE VIEW book_view AS SELECT b1.BookId,b1.Namebooks,b1.Author,b2.name,b1.Publisher,b1.image  FROM  Books b1 inner join Category b2 on  b1.categoryid = b2.categoryid;

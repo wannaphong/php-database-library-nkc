@@ -18,7 +18,7 @@ require_once("config.php");
     <div class="container center">
         <?php if(!empty($_GET['loginfall'])){
             ?>
-            <h2>User/Password ไม่ถูกต้อง</h2>
+            <h3>User/Password ไม่ถูกต้อง</h3>
         <?php }
         ?>
         <form method="POST" action="check_login.php">

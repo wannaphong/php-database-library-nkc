@@ -6,12 +6,11 @@
  * Made By MaterializeCSS.com
  */
  body{
-   background-image: url("../b2.jpg");
+   /*background-image: url("../b2.jpg");*/
  }
-
  nav ul a,
  nav .brand-logo {
-   color: #444;
+   color: rgb(255, 255, 255);
  }
  
  p {

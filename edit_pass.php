@@ -21,7 +21,7 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-        <h2 align="center">เปลี่ยนรหัสผ่านบรรณารักษ์</h1>
+        <h3 align="center">เปลี่ยนรหัสผ่านบรรณารักษ์</h1>
         <?php
         echo "รหัสบรรณารักษ์ : ".$st_id;
         ?>
