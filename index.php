@@ -9,6 +9,7 @@ require_once("config.php");
     <title><?php echo $name_web;?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="icon" type="image/png" href="./logo-mini.png" />
     <script src="main.js"></script>
 <?php include("js.php"); ?></head>
 <body>
@@ -16,6 +17,8 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
+      <div align="center">
+      <img src="./logo.png"></div>
         <h1 align="center">ระบบยืม-คืนหนังสือห้องสมุด</h1>
         <p align="center">พัฒนาโดย นักศึกษาสาขาวิทยาการคอมพิวเตอร์และสารสนเทศ</p>
     </article>

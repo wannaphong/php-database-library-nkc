@@ -57,7 +57,7 @@ require_once("config.php");
         <td><div align="center"><?php echo $result["BookId"];?></div></td>
         <td><div align="center"><?php 
         if(!IsNullOrEmptyString($result["image"])){
-            echo '<img src="images/'.$result["image"].'">';
+            echo '<img src="images/'.$result["image"].'" class="responsive">';
         }
         ?></div></td>
         <td><div align="center"><?php echo $result["Namebooks"];?></div></td>
