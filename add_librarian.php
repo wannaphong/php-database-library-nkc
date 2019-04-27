@@ -14,7 +14,7 @@ require_once("config.php");
     <?php include('nav.php');?>
     <div class="row">
     <div class="container">
-        <h1 align="center">เพิ่มข้อมูลบรรณารักษ์</h1>
+        <h2 align="center">เพิ่มข้อมูลบรรณารักษ์</h1>
         <form action="./save_add_librarian.php"  method="POST">
         <table>
         <tr>

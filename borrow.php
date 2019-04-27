@@ -25,7 +25,7 @@ require_once("check_studentid.php");
     <?php include('nav.php');?>
     <div class="row">
     <div class="container">
-        <h1 align="center">รายการยืมหนังสือ</h1>
+        <h2 align="center">รายการยืมหนังสือ</h1>
         <?php
         echo "รหัสนักเรียน : ".$_COOKIE['studentid']."<br>";
         ?>

@@ -1,6 +1,6 @@
 <?php include("nav2.php"); ?>
   <div id="index-banner" class="parallax-container">
-   <!-- <div class="section no-pad-bot">
+   <div class="section no-pad-bot">
       <div class="container">
         <br><br>
        <h2 class="header center teal-text text-lighten-2">Parallax Template</h1>
@@ -13,6 +13,6 @@
         <br><br>
 
       </div>
-    </div>-->
-    <div class="parallax"><img src="h2.jpg" alt="Unsplashed background img 1" ></div>
+    </div>
+    <div class="parallax"><img src="h-web.jpg" alt="Unsplashed background img 1" ></div>
   </div>

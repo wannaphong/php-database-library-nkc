@@ -29,7 +29,7 @@ if($datetime1>$datetime2){
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1 align="center">ระบบคิดค่าปรับ</h1>
+        <h2 align="center">ระบบคิดค่าปรับ</h1>
         <p>มีค่าปรับ จำนวน <?php echo $fine_cal; ?> บาท</p>
         <a href="./return.php?borrowid=<?php echo $id; ?>&Fine=<?php echo $fine_cal; ?>"><button>เรียบร้อย</button></a>
     </article>
@@ -41,6 +41,7 @@ if($datetime1>$datetime2){
 }
 else{
     ?>
+<!DOCTYPE html>
 <html>
 <head>
 <META HTTP-EQUIV="Refresh" CONTENT="0;URL=./return.php?borrowid=<?php echo $id; ?>&Fine=<?php echo $fine_cal; ?>">

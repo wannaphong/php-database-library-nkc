@@ -1,6 +1,6 @@
 <?php
-require_once("is_login.php");
 require_once("config.php");
+$name=$_GET["namebook"];
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,11 +15,10 @@ require_once("config.php");
 <?php include('nav.php');?>
     <div class="row">
     <div class="container">
-      <h2 align="center">รายการหนังสือ</h1>
-      <a href="./add_book.php"><button>เพิ่มหนังสือ</button></a>
+      
     <?php
         require("db.php");
-	    $sql = "SELECT * FROM Books";
+	    $sql = "SELECT * FROM Books LIKE %".$name."%";
         $query = mysqli_query($con,$sql);
         $rowcount=mysqli_num_rows($query);
         if($rowcount== 0){
@@ -29,6 +28,8 @@ require_once("config.php");
         if (isset($_COOKIE['studentid']))
         {
         ?>
+        <h2 align="center">รายการหนังสือ</h1>
+      <a href="./add_book.php"><button>เพิ่มหนังสือ</button></a>
     <b>รหัสนักเรียน : <?php echo $_COOKIE['studentid']; ?></b>
     <?php }?>
     <table>

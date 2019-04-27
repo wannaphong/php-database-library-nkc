@@ -23,7 +23,7 @@ if($rowcount){
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1 align="center">รายละเอียดหนังสือ</h1>
+        <h2 align="center">รายละเอียดหนังสือ</h1>
         <table>
         <tr>
             <td>ชื่อ :</td>

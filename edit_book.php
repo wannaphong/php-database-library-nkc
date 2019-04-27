@@ -27,7 +27,7 @@ if($rowcount){
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1 align="center">แก้ไขข้อมูลหนังสือ</h1>
+        <h2 align="center">แก้ไขข้อมูลหนังสือ</h1>
         <form action="./save_edit_book.php"  method="POST">
         <table>
         <tr>

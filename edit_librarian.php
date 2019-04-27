@@ -21,7 +21,7 @@ require_once("config.php");
     <?php include('nav.php');?>
     <main>
       <article>
-        <h1 align="center">แก้ไขข้อมูลบรรณารักษ์</h1>
+        <h2 align="center">แก้ไขข้อมูลบรรณารักษ์</h1>
         <?php
         echo "รหัสบรรณารักษ์ : ".$st_id;
         ?>
