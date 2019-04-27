@@ -8,15 +8,13 @@ require_once("config.php");
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>เพิ่มข้อมูลนักเรียน : <?php echo $name_web;?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-<?php include("js.php"); ?></head>
+    <?php include("header_web.php"); ?>
+    <?php include("js.php"); ?>
+</head>
 <body>
-    <?php include('header_web.php');?>
     <?php include('nav.php');?>
-    <main>
-      <article>
+    <div class="row">
+    <div class="container">
         <h1 align="center">เพิ่มข้อมูลนักเรียน</h1>
         <form action="./save_add_student.php"  method="POST">
         <table>
@@ -36,8 +34,8 @@ require_once("config.php");
         <tr><td>เบอร์ :</td> <td><input type="tel" name="phone"></td></tr>
         <tr><td><input type="submit" value="Submit"></td></tr></table>
         </form><br>
-    </article>
-    </main>
-    <?php include('footer_web.php');?>
+    </div>
+    </div>
+    <?php include('footer.php');?>
 </body>
 </html>

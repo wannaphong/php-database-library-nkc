@@ -18,15 +18,13 @@ require_once("check_studentid.php");
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>ระบบยืมหนังสือ : <?php echo $name_web;?></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-<?php include("js.php"); ?></head>
+    <?php include("header_web.php"); ?>
+    <?php include("js.php"); ?>
+</head>
 <body>
-    <?php include('header_web.php');?>
     <?php include('nav.php');?>
-    <main>
-      <article>
+    <div class="row">
+    <div class="container">
         <h1 align="center">รายการยืมหนังสือ</h1>
         <?php
         echo "รหัสนักเรียน : ".$_COOKIE['studentid']."<br>";
@@ -68,8 +66,8 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 ?>
         <a href="book.php"><button>ยืมหนังสือ</button></a><br>
         <a href="clean_studentid.php"><button>เสร็จสิ้นรายการ</button></a><br><br>
-    </article>
-    </main>
-    <?php include('footer_web.php');?>
+    </div>
+    </div>
+    <?php include('footer.php');?>
 </body>
 </html>
