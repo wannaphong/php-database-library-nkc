@@ -32,6 +32,7 @@ require_once("config.php");
     <b>รหัสนักเรียน : <?php echo $_COOKIE['studentid']; ?></b>
     <?php }?>
     <table>
+    <thead>
         <tr>
         <th>รหัส</th>
         <th>รูป</th>
@@ -45,6 +46,7 @@ require_once("config.php");
         <th>ืยมหนังสือ</th>
         <?php }?>
     </tr>
+    </thead>
     <?php
     while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
     {
@@ -53,7 +55,7 @@ require_once("config.php");
         <td><?php echo $result["BookId"];?></td>
         <td><?php 
         if(!IsNullOrEmptyString($result["image"])){
-            echo '<img src="images/'.$result["image"].'" class="responsive">';
+            echo '<img src="images/'.$result["image"].'" class="responsive-img">';
         }
         ?></td>
         <td><?php echo $result["Namebooks"];?></td>

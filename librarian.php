@@ -27,6 +27,7 @@ open_only_admin();
          else{
     ?>
     <table border="1">
+    <thead>
         <tr>
         <th> <div align="center">ชื่อ</div></th>
         <th> <div align="center">บัตรประชาชน</div></th>
@@ -34,7 +35,8 @@ open_only_admin();
         <th> <div align="center">เปลี่ยนรหัสผ่าน</div></th>
         <th> <div align="center">ลบ</div></th>
         <th> <div align="center">เปลี่ยนสิทธิ์</div></th>
-    </tr>
+        </tr>
+    </thead>
 <?php
 while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 {

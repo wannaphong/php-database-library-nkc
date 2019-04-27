@@ -27,6 +27,7 @@ require_once("config.php");
          else{
     ?>
     <table border="1">
+    <thead>
         <tr>
         <th> <div align="center">ชื่อ</div></th>
         <th> <div align="center">รหัส</div></th>
@@ -39,6 +40,7 @@ require_once("config.php");
         <th> <div align="center">ลบรายชื่อ</div></th>
         <?php } ?>
     </tr>
+    </thead>
 <?php
 while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 {
