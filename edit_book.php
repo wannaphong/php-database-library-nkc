@@ -39,16 +39,18 @@ if($rowcount){
             <td>หมวดหมู่ :</td>
             <td>
             <select required name="category">
-                <option value="เบ็ดเตล็ดหรือความรู้ทั่วไป">เบ็ดเตล็ดหรือความรู้ทั่วไป</option>
-                <option value="ปรัชญา">ปรัชญา</option>
-                <option value="ศาสนา">ศาสนา</option>
-                <option value="สังคมศาสตร์">สังคมศาสตร์</option>
-                <option value="ภาษาศาสตร์">ภาษาศาสตร์</option>
-                <option value="วิทยาศาสตร์">วิทยาศาสตร์</option>
-                <option value="วิทยาศาสตร์ประยุกต์ หรือเทคโนโลยี">วิทยาศาสตร์ประยุกต์ หรือเทคโนโลยี</option>
-                <option value="ศิลปกรรมและการบันเทิง">ศิลปกรรมและการบันเทิง</option>
-                <option value="วรรณคดี">วรรณคดี</option>
-                <option value="ประวัติศาสตร์">ประวัติศาสตร์</option>
+            <?php
+            require("db.php");
+            $sql = "SELECT * FROM Category";
+            $query = mysqli_query($con,$sql);
+            $rowcount=mysqli_num_rows($query);
+            while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
+            {
+            ?>
+            <option value="<?php echo $result["categoryid"];?>"><?php echo $result["name"];?></option>
+            <?php
+            }
+            ?>
             </select>
             </td>
         </tr>
