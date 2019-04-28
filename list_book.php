@@ -4,6 +4,13 @@ $name=$_GET["namebook"];
 if (empty($_GET)) {
     $name="*";
 }
+$perpage = 5;
+if (isset($_GET['page'])) {
+$page = $_GET['page'];
+} else {
+$page = 1;
+}
+$start = ($page - 1) * $perpage;
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,8 +29,8 @@ if (empty($_GET)) {
     <?php
         require("db.php");
         if($name!="*")
-        $sql = "SELECT * FROM book_view WHERE Namebooks LIKE '%$name%'";
-        else $sql = "SELECT * FROM book_view";
+        $sql = "SELECT * FROM book_view WHERE Namebooks LIKE '%$name%' limit {$start} , {$perpage}";
+        else $sql = "SELECT * FROM book_view limit {$start} , {$perpage}";
         //echo $sql;
         $query = mysqli_query($con,$sql);
         if (isset($_COOKIE['studentid']))
@@ -76,9 +83,20 @@ if (empty($_GET)) {
     ?>
 </table>
 <?php
-
+        if($name!="*")
+        $sql = "SELECT * FROM book_view WHERE Namebooks LIKE '%$name%'";
+        else $sql = "SELECT * FROM book_view";
+        $query = mysqli_query($con,$sql);
+        $total_record=mysqli_num_rows($query);
+        $total_page = ceil($total_record / $perpage);
 ?>
-<br>
+  <ul class="pagination">
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    <?php for($i=1;$i<=$total_page;$i++){ ?>
+ <li  class="waves-effect"><a href="./book.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+ <?php } ?>
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+  </ul>
 <?php
     if (isset($_COOKIE['studentid']))
     {

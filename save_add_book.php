@@ -22,7 +22,7 @@ if(isset($_FILES['image'])){
     $extensions= array("jpeg","jpg","png");
     
     if(in_array($file_ext,$extensions)=== false){
-       $errors[]="extension not allowed, please choose a JPEG or PNG file.";
+       $errors[]="ไม่อนุญาตให้อัพโหลดไฟล์นี้, ให้เลือกไฟล์ JPEG หรือ PNG เท่านั้น";
     }
     
     if($file_size > 2097152){
@@ -32,7 +32,6 @@ if(isset($_FILES['image'])){
     if(empty($errors)==true){
        move_uploaded_file($file_tmp,"images/".$file_name);
        $sql="INSERT INTO Books (NameBooks,Author,categoryid,publisher,image) VALUES ('".$namebook."', '".$author."', $category,'".$publisher."','".$file_name."')";
-       //echo "Success";
     }else{
        print_r($errors);
     }

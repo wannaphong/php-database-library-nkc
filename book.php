@@ -1,6 +1,17 @@
 <?php
 require_once("is_login.php");
 require_once("config.php");
+$perpage = 5;
+$category=null;
+if (isset($_GET['category'])) {
+    $category = $_GET['category'];
+}
+if (isset($_GET['page'])) {
+$page = $_GET['page'];
+} else {
+$page = 1;
+}
+$start = ($page - 1) * $perpage;
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,9 +28,27 @@ require_once("config.php");
     <div class="container">
       <h3 align="center">รายการหนังสือ</h1>
       <a href="./add_book.php" class="waves-effect waves-light btn">เพิ่มหนังสือ</a>
+      <form action="./book.php" method="get">
+      <select required name="category">
+            <?php
+            require("db.php");
+            $sql = "SELECT * FROM Category";
+            $query = mysqli_query($con,$sql);
+            while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
+            {
+            ?>
+            <option value="<?php echo $result["categoryid"];?>"><?php echo $result["name"];?></option>
+            <?php
+            }
+            ?>
+            </select>
+            <input type="submit" value="Submit" class="waves-effect waves-light btn">
+        </form>
     <?php
         require("db.php");
-	    $sql = "SELECT * FROM Books";
+        if($category==null)
+        $sql = "SELECT * FROM Books limit {$start} , {$perpage}";
+        else $sql = "SELECT * FROM Books  where categoryid=$category limit {$start} , {$perpage}";
         $query = mysqli_query($con,$sql);
         $rowcount=mysqli_num_rows($query);
         if($rowcount== 0){
@@ -76,8 +105,25 @@ require_once("config.php");
     ?>
 </table>
 <?php
-
+        if($category==null)
+        $sql = "SELECT * FROM Books";
+        else $sql = "SELECT * FROM Books  where categoryid=".$category;
+        $query = mysqli_query($con,$sql);
+        $total_record=mysqli_num_rows($query);
+        $total_page = ceil($total_record / $perpage);
 ?>
+  <ul class="pagination">
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    <?php for($i=1;$i<=$total_page;$i++){ if($category==null){?>
+ <li  class="waves-effect"><a href="./book.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+ <?php }else{
+ ?>
+ <li  class="waves-effect"><a href="./book.php?page=<?php echo $i; ?>&category=<?php echo $category; ?>"><?php echo $i; ?></a></li>
+ <?php }
+}?>
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+  </ul>
+        
 <br>
 <?php
     if (isset($_COOKIE['studentid']))

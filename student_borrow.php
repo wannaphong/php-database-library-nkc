@@ -11,16 +11,14 @@ require_once("config.php");
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ทดสอบ</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-<?php include("js.php"); ?></head>
+    <title>รายการยืมหนังสือที่ค้าง</title>
+    <?php include("header_web.php"); ?>
+    <?php include("js.php"); ?>
+</head>
 <body>
-    <?php include('header_web.php');?>
     <?php include('nav.php');?>
-    <main>
-      <article>
+    <div class="row">
+    <div class="container center">
         <h3 align="center">รายการยืมหนังสือที่ค้าง</h1>
         <?php
         echo "รหัสนักเรียน : ".$st_id;
@@ -56,8 +54,8 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 <?php
 
 ?>
-    </article>
-    </main>
-    <?php include('footer_web.php');?>
+    </div>
+    </div>
+    <?php include('footer.php');?>
 </body>
 </html>

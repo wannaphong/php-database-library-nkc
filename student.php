@@ -29,8 +29,8 @@ require_once("config.php");
     <table border="1">
     <thead>
         <tr>
-        <th> <div align="center">ชื่อ</div></th>
         <th> <div align="center">รหัส</div></th>
+        <th> <div align="center">ชื่อ</div></th>
         <th> <div align="center">รายการยืมที่ค้าง</div></th>
         <?php
         require_once("check_admin.php");
@@ -46,8 +46,8 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 {
 ?>
   <tr>
+  <td><?php echo $result["StudentId"];?></td>
     <td><div align="center"><?php echo $result["Name"];?></div></td>
-    <td><?php echo $result["StudentId"];?></td>
     <td><a href="./student_borrow.php?stu_id=<?php echo $result["StudentId"];?>">คลิก</a></td>
     <?php if(is_admin()){ ?><td>
     <a href="./edit_student.php?stu_id=<?php echo $result["StudentId"];?>">คลิก</a></td>
