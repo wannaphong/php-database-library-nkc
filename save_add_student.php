@@ -9,8 +9,6 @@ $phone=$_POST['phone'];
 $sql = "INSERT INTO Students (Name,Address,DOB,Gender,Phone) VALUES ('".$name."', '".$address."', '".$DOB."','".$gender."','".$phone."')";
 mysqli_query($con,$sql);
 mysqli_commit($con);
-
-echo "เพิ่มข้อมูลนักเรียนสำเร็จ";
-header("Location: ./student.php");
+header("Location: student.php");
 exit();
 ?>
