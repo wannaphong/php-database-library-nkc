@@ -82,7 +82,7 @@ $num_book=mysqli_num_rows($list_book_data);
     ?>
     </tbody>
       </table>
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
+      <div id="piechart" style="width: auto; height: 500px;"></div>
     </div>
     </div>
         </div>

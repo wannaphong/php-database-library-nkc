@@ -21,7 +21,7 @@ if($rowcount){
     <?php include('nav.php');?>
     <div class="row">
     <div class="container">
-        <h3 align="center">รายละเอียดหนังสือ</h1>
+        <h4 align="center">รายละเอียดหนังสือ</h4>
         <div class="row">
         <div class="col s5">
         <?php 
