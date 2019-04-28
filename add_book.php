@@ -50,7 +50,7 @@ require_once("config.php");
         </tr>
         <tr>
         <td>สำนักพิมพ์ :</td> <td><input type="text" name="publisher"></td></tr><tr>
-        <td><input type="submit" value="บันทึก"></td></tr>
+        <td><input type="submit" value="บันทึก" class="waves-effect waves-light btn"></td></tr>
         </table><br>
         </form>
     </div>

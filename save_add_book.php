@@ -41,7 +41,7 @@ else
 $sql = "INSERT INTO Books (NameBooks,Author,categoryid,publisher) VALUES ('".$namebook."', '".$author."',$category,'".$publisher."')";
 mysqli_query($con,$sql);
 mysqli_commit($con);
-echo $sql;
-//header("Location: ./book.php");
-//exit();
+//echo $sql;
+header("Location: ./book.php");
+exit();
 ?>

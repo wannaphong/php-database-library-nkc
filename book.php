@@ -16,7 +16,7 @@ require_once("config.php");
     <div class="row">
     <div class="container">
       <h3 align="center">รายการหนังสือ</h1>
-      <a href="./add_book.php"><button>เพิ่มหนังสือ</button></a>
+      <a href="./add_book.php" class="waves-effect waves-light btn">เพิ่มหนังสือ</a>
     <?php
         require("db.php");
 	    $sql = "SELECT * FROM Books";
@@ -59,13 +59,13 @@ require_once("config.php");
         }
         ?></td>
         <td><?php echo $result["Namebooks"];?></td>
-        <td><a href="./detail_book.php?bookid=<?php echo $result["BookId"];?>"><button>รายละเอียด</button></a></td>
-        <td><a href="./del_book.php?bookid=<?php echo $result["BookId"];?>"><button onclick="return confirm('คุณแน่ใจว่าต้องการลบ ?')">คลิก</button></a></td>
+        <td><a href="./detail_book.php?bookid=<?php echo $result["BookId"];?>" class="waves-effect waves-light btn">รายละเอียด</a></td>
+        <td><a href="./del_book.php?bookid=<?php echo $result["BookId"];?>" class="waves-effect waves-light btn" onclick="return confirm('คุณแน่ใจว่าต้องการลบ ?')">คลิก</a></td>
         <?php
         if (isset($_COOKIE['studentid']))
         {
         ?>
-        <td><a href="./borrowbook.php?bookid=<?php echo $result["BookId"];?>"><button>ยืม</button></a></td>
+        <td><a href="./borrowbook.php?bookid=<?php echo $result["BookId"];?>" class="waves-effect waves-light btn">ยืม</a></td>
         <?php
         }
         ?>

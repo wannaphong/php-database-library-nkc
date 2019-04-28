@@ -31,10 +31,8 @@ if($rowcount){
         ?>
         </div>
       <div class="col s7">
-      <table>
-      <thead>
-      <tr>
-      <th><h4><?php echo $rowcount["Namebooks"]; ?></h4></th></tr></thead>
+      <h4><?php echo $rowcount["Namebooks"]; ?></h4>
+      <table class="striped">
       <tbody>
       <tr>
       <td>ผู้เขียน</td><td><?php echo $rowcount["Author"]; ?></td>
@@ -43,7 +41,7 @@ if($rowcount){
           <tr><td>สำนักพิมพ์</td><td><?php echo $rowcount["Publisher"]; ?></td></tr>
           <?php
         if (isset($_COOKIE['user'])){ ?>
-        <tr><td><a href="./edit_book.php?id=<?php echo $rowcount['BookId']; ?>">แก้ไข</td></tr>
+        <tr><td><a href="./edit_book.php?id=<?php echo $rowcount['BookId']; ?>" class="waves-effect waves-light btn">แก้ไข</td></tr>
         <?php } ?>
         </tbody>
         </table>

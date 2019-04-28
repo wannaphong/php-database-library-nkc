@@ -34,7 +34,7 @@ require_once("config.php");
         <table>
         <tr>
         <td>รหัสนักเรียน :</td> <td><input type="number" name="studentid"></td></tr>
-        <tr><td><input type="submit" value="Submit"></td></tr>
+        <tr><td><input type="submit" value="Submit" class="waves-effect waves-light btn"></td></tr>
         </form>
         </table>
         </div>

@@ -41,7 +41,6 @@ if($rowcount){
             require("db.php");
             $sql = "SELECT * FROM Category";
             $query = mysqli_query($con,$sql);
-            $rowcount=mysqli_num_rows($query);
             while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
             {
             ?>

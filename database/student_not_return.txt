@@ -12,3 +12,8 @@ borrow_view
 CREATE OR REPLACE VIEW borrow_view AS SELECT b1.BorrowId,b2.Namebooks "Book_name",l.Name "Librarian_name",s.Name "Student_name",b1.Date_of_borrow,b1.Deadlines,b1.Date_of_return  FROM  Borrow b1,Books b2,Students s,Librarian l  where  b1.BookId = b2.BookId and s.StudentId = b1.StudentId and b1.LibrarianId=l.LibrarianId;
 
 SELECT COUNT(Book_name) FROM borrow_view where Book_name=(SELECT DISTINCT Book_name FROM borrow_view)
+
+
+
+SELECT Book_name as name,COUNT(Book_name) as num FROM borrow_view where Book_name="พ่อรวยสอนลูก"
+(SELECT Books.Namebooks FROM Books)
