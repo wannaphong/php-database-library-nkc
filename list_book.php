@@ -1,6 +1,9 @@
 <?php
 require_once("config.php");
 $name=$_GET["namebook"];
+if (empty($_GET)) {
+    $name="*";
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,11 +17,13 @@ $name=$_GET["namebook"];
 <body>
 <?php include('nav.php');?>
     <div class="row">
-    <div class="container">
+    <div class="container" style="width: 100%;">
       
     <?php
         require("db.php");
+        if($name!="*")
         $sql = "SELECT * FROM book_view WHERE Namebooks LIKE '%$name%'";
+        else $sql = "SELECT * FROM book_view";
         //echo $sql;
         $query = mysqli_query($con,$sql);
         if (isset($_COOKIE['studentid']))

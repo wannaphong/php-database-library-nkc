@@ -31,16 +31,22 @@ if($rowcount){
         ?>
         </div>
       <div class="col s7">
-          <h4><?php echo $rowcount["Namebooks"]; ?></h4><br>
-          
-          ผู้เขียน : <?php echo $rowcount["Author"]; ?><br>
-          หมวดหมู่ : <?php echo $rowcount["name"]; ?><br>
-          สำนักพิมพ์ : <?php echo $rowcount["Publisher"]; ?>
+      <table>
+      <thead>
+      <tr>
+      <th><h4><?php echo $rowcount["Namebooks"]; ?></h4></th></tr></thead>
+      <tbody>
+      <tr>
+      <td>ผู้เขียน</td><td><?php echo $rowcount["Author"]; ?></td>
+          </tr>  
+          <tr><td>หมวดหมู่</td><td><?php echo $rowcount["name"]; ?></td></tr>
+          <tr><td>สำนักพิมพ์</td><td><?php echo $rowcount["Publisher"]; ?></td></tr>
           <?php
         if (isset($_COOKIE['user'])){ ?>
-        <a href="./edit_book.php?id=<?php echo $rowcount['BookId']; ?>">แก้ไข
+        <tr><td><a href="./edit_book.php?id=<?php echo $rowcount['BookId']; ?>">แก้ไข</td></tr>
         <?php } ?>
-    </span>
+        </tbody>
+        </table>
     </div>
         </div>
         </div>

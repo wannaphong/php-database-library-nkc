@@ -2,19 +2,15 @@
 require_once("config.php");
 require_once("db.php");
 $sql="SELECT * FROM borrow_view;";
-
-$borrow_all=mysqli_query($con,$sql);
-$num_borrow=mysqli_num_rows($borrow_all);
-$list_book="SELECT * FROM Books;";//"SELECT DISTINCT Book_name FROM Books;";
-$list_book_data=mysqli_query($con,$list_book);
-$num_book=mysqli_num_rows($list_book_data);
+$borrow_week=mysqli_query($con,"SELECT * FROM borrow_view WHERE YEARWEEK(Date_of_borrow,0)=YEARWEEK(NOW(),0);");
+$num_borrow_week=mysqli_num_rows($borrow_week);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>รายงานการยืมหนังสือทั้งหมด : <?php echo $name_web;?></title>
+    <title>รายงานการยืมหนังสือสัปดาห์ : <?php echo $name_web;?></title>
     <?php include("header_web.php"); ?>
     <?php include("js.php"); ?>
 </head>
@@ -24,8 +20,17 @@ $num_book=mysqli_num_rows($list_book_data);
     <div class="container">
     <div>
     <h3>รายงานการยืมหนังสือ</h3>
-    จำนวนการยืมทั้งหมด : <?php echo $num_borrow; ?><br>
-    จำนวนหนังสือ : <?php echo $num_book; ?>
+    จำนวนการยืมในสัปดาห์นี้ : <?php echo $num_borrow_week; ?><br>
+    <?php
+    while($result=mysqli_fetch_array($borrow_week,MYSQLI_ASSOC))
+    {
+        echo $result["Student_name"];
+        ?>
+    
+    <?php    
+    }
+    
+    ?>
     <div id="chartContainer" style="height: 300px; width: 100%;"></div>
     </div>
     </div>

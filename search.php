@@ -13,7 +13,7 @@ require_once("config.php");
 <body>
     <?php include('nav.php');?>
   <div class="row">
-    <div class="container center">
+    <div class="container center" style="height: 300px; width: 100%;">
     <form action="./list_book.php" method="get">
     <div class="input-field col s12">
           <input name="namebook" required id="name" type="text">

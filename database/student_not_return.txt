@@ -6,3 +6,9 @@ CREATE OR REPLACE VIEW student_not_return AS SELECT * FROM Borrow WHERE BorrowId
 CREATE OR REPLACE VIEW student_not_return AS SELECT * FROM Borrow WHERE Date_of_return IS NULL
 
 CREATE OR REPLACE VIEW book_view AS SELECT b1.BookId,b1.Namebooks,b1.Author,b2.name,b1.Publisher,b1.image  FROM  Books b1 inner join Category b2 on  b1.categoryid = b2.categoryid;
+
+
+borrow_view
+CREATE OR REPLACE VIEW borrow_view AS SELECT b1.BorrowId,b2.Namebooks "Book_name",l.Name "Librarian_name",s.Name "Student_name",b1.Date_of_borrow,b1.Deadlines,b1.Date_of_return  FROM  Borrow b1,Books b2,Students s,Librarian l  where  b1.BookId = b2.BookId and s.StudentId = b1.StudentId and b1.LibrarianId=l.LibrarianId;
+
+SELECT COUNT(Book_name) FROM borrow_view where Book_name=(SELECT DISTINCT Book_name FROM borrow_view)
