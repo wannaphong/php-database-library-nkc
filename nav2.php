@@ -5,6 +5,7 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="./">หน้าหลัก</a></li>
         <li><a href="./search.php">ค้นหา</a></li>
+        <li><a href="./report.php">รายงาน</a></li>
       <?php
       if (isset($_COOKIE['user']))
       {
@@ -26,6 +27,7 @@
       <ul id="nav-mobile" class="sidenav">
       <li><a href="./">หน้าหลัก</a></li>
       <li><a href="./search.php">ค้นหา</a></li>
+      <li><a href="./report.php">รายงาน</a></li>
       <?php
       if (isset($_COOKIE['user']))
       {
