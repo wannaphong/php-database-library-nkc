@@ -72,7 +72,7 @@ $start = ($page - 1) * $perpage;
         if (isset($_COOKIE['studentid']))
         {
         ?>
-        <th>ืยมหนังสือ</th>
+        <th>ยืมหนังสือ</th>
         <?php }?>
     </tr>
     </thead>

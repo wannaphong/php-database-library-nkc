@@ -93,7 +93,7 @@ $start = ($page - 1) * $perpage;
   <ul class="pagination">
     <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
     <?php for($i=1;$i<=$total_page;$i++){ ?>
- <li  class="waves-effect"><a href="./book.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+ <li  class="waves-effect"><a href="./list_book.php?page=<?php echo $i; ?>&namebook=<?php echo $name; ?>"><?php echo $i; ?></a></li>
  <?php } ?>
     <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
   </ul>
