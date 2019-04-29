@@ -33,6 +33,8 @@ $start = ($page - 1) * $perpage;
         else $sql = "SELECT * FROM book_view limit {$start} , {$perpage}";
         //echo $sql;
         $query = mysqli_query($con,$sql);
+        $total_p=mysqli_num_rows($query);
+        if($total_p>0){
         if (isset($_COOKIE['studentid']))
         {
         ?>
@@ -56,6 +58,7 @@ $start = ($page - 1) * $perpage;
     </tr>
     </thead>
     <?php
+    
     while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
     {
     ?>
@@ -105,7 +108,11 @@ $start = ($page - 1) * $perpage;
         <br>Book ID : <input type="text" name="bookid"><br>
         <input type="submit" value="Submit">
         </form>
-<?php } ?>
+<?php } }
+else{
+    echo "<h1>ไม่พบหนังสือ</h1>";
+}
+?>
 </div>
 </div>
     <?php include('footer.php');?>
