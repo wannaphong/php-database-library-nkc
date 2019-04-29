@@ -53,7 +53,7 @@ $result=mysqli_fetch_array($query,MYSQLI_ASSOC)
             </td>
 </tr>
   <tr><td>เบอร์ : </td><td><input type="tel" name="phone" value="<?php echo $result['Phone'];  ?>"></td></tr>
-  <tr><td><input type="submit" value="Submit"></tr><td></td>
+  <tr><td><input type="submit" value="Submit"  class="waves-effect waves-light btn"></tr><td></td>
         </table>
     </form>
 <?php
