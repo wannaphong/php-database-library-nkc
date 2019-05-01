@@ -67,7 +67,7 @@ $start = ($page - 1) * $perpage;
         <th>รูป</th>
         <th>ชื่อหนังสือ</th>
         <th>รายละเอียด</th>
-        <th>ลบหนังสือ</th>
+        <th>ลบ</th>
         <?php
         if (isset($_COOKIE['studentid']))
         {

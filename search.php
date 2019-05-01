@@ -12,18 +12,32 @@ require_once("config.php");
 </head>
 <body>
     <?php include('nav.php');?>
-  <div class="row">
-    <div class="container center" style="height: 300px; width: 100%;">
-    <form action="./list_book.php" method="get">
-    <div class="input-field col s12">
+    <form action="./list_book.php" method="get">>
+        <div class="row">
+         
+            <div class="col s12 m6 offset-m3">
+                  <div class="card center-align mg">
+                    
+                      <div class="card-content">
+                      <span class="card-title">ค้นหาหนังสือ</span>
+                      <div class="input-field col s12">
           <input name="namebook" required id="name" type="text">
           <label for="name">ค้นหาหนังสือ</label>
+        </div>
+        <div>
         </div>
         <button class="btn waves-effect waves-light" type="submit">Submit
     <i class="material-icons right">send</i>
   </button>
-    </form>
-    </div>
+                      </div>
+                     
+                
+                     </div>
+                   </div>
+             </div>
+        
+      
+       </form>  
     </div>
     <?php include("footer.php"); ?>
 </body>

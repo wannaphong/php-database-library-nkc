@@ -31,7 +31,7 @@ require_once("check_studentid.php");
         ?>
         <?php
         require("db.php");
-	    $sql = "SELECT Books.Namebooks, A.Date_of_borrow,A.BorrowId FROM student_not_return as A INNER JOIN Books ON A.BookId=Books.BookId WHERE A.StudentId=".$_COOKIE['studentid'];//"SELECT * FROM student_not_return WHERE StudentId=".$_COOKIE['studentid'];
+	    $sql = "SELECT stu.Name,Books.Namebooks, A.Date_of_borrow,A.BorrowId FROM student_not_return as A INNER JOIN Books ON A.BookId=Books.BookId,Students as stu WHERE A.StudentId=".$_COOKIE['studentid']." and A.StudentId=stu.StudentId";//"SELECT * FROM student_not_return WHERE StudentId=".$_COOKIE['studentid'];
         $query = mysqli_query($con,$sql);
         $rowcount=mysqli_num_rows($query);
         if($rowcount== 0){
@@ -47,14 +47,16 @@ require_once("check_studentid.php");
         <th> <div align="center">ลบ</div></th>
     </tr>
 <?php
+$name="";
 while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 {
+    $name=$result["Name"];
 ?>
   <tr>
     <td><div align="center"><?php echo $result["Namebooks"];?></div></td>
     <td><?php echo $result["Date_of_borrow"];?></td>
-    <td><a href="./check_fine.php?borrowid=<?php echo $result["BorrowId"];?>"><button>คลิก</button></a></td>
-    <td><a href="./del_borrow.php?borrowid=<?php echo $result["BorrowId"];?>" onclick="return confirm('คุณแน่ใจว่าต้องการลบ ?')">ลบการยืมหนังสือ</a></td>
+    <td><a href="./check_fine.php?borrowid=<?php echo $result["BorrowId"];?>"><button class="waves-effect waves-light btn">คืน</button></a></td>
+    <td><a href="./del_borrow.php?borrowid=<?php echo $result["BorrowId"];?>" onclick="return confirm('คุณแน่ใจว่าต้องการลบ ?')" class="waves-effect waves-light btn">ลบการยืมหนังสือ</a></td>
   </tr>
 <?php
 }
@@ -62,10 +64,13 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 ?>
 </table>
 <?php
+echo "ชื่อ : ".$name."<br>";
 
 ?>
-        <a href="book.php"><button>ยืมหนังสือ</button></a><br>
-        <a href="clean_studentid.php"><button>เสร็จสิ้นรายการ</button></a><br><br>
+<div class="container center">
+        <a href="book.php"><button class="waves-effect waves-light btn">ยืมหนังสือ</button></a>
+        <a href="clean_studentid.php" ><button class="waves-effect waves-light btn">เสร็จสิ้นรายการ</button></a><br><br>
+        </div>
     </div>
     </div>
     <?php include('footer.php');?>

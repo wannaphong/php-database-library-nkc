@@ -53,7 +53,7 @@ $start = ($page - 1) * $perpage;
         if (isset($_COOKIE['studentid']))
         {
         ?>
-        <th>ืยมหนังสือ</th>
+        <th>ยืมหนังสือ</th>
         <?php }?>
     </tr>
     </thead>
@@ -70,12 +70,12 @@ $start = ($page - 1) * $perpage;
         }
         ?></td>
         <td><?php echo $result["Namebooks"];?></td>
-        <td><a href="./detail_book.php?bookid=<?php echo $result["BookId"];?>"><button>รายละเอียด</button></a></td>
+        <td><a href="./detail_book.php?bookid=<?php echo $result["BookId"];?>"><button class="waves-effect waves-light btn">รายละเอียด</button></a></td>
         <?php
         if (isset($_COOKIE['studentid']))
         {
         ?>
-        <td><a href="./borrowbook.php?bookid=<?php echo $result["BookId"];?>"><button>ยืม</button></a></td>
+        <td><a href="./borrowbook.php?bookid=<?php echo $result["BookId"];?>"><button class="waves-effect waves-light btn">ยืม</button></a></td>
         <?php
         }
         ?>

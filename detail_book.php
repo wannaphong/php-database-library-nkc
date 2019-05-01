@@ -28,6 +28,9 @@ if($rowcount){
         if(!IsNullOrEmptyString($rowcount["image"])){
             echo '<img src="images/'.$rowcount["image"].'" class="responsive-img">';
         }
+        else{
+            echo '<img src="./NoImageBook.jpg" class="responsive-img">';
+        }
         ?>
         </div>
       <div class="col s7">
