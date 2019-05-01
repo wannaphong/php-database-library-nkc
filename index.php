@@ -18,7 +18,7 @@ require_once("config.php");
   <div class="slider">
     <ul class="slides">
       <li>
-        <img src="./n1.jpg" style="width:400px;height:200px;" > <!-- random image -->
+        <img src="./n2.png"><!-- style="width:750px;height:375px;" >  random image -->
         <!--<div class="caption right-align">
           <h3>This is our big Tagline!</h3>
           <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>

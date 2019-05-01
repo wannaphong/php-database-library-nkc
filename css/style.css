@@ -7,7 +7,13 @@
  */
  body{
    /*background-image: url("../b2.jpg");*/
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
  }
+ main {
+  flex: 1 0 auto;
+}
  nav ul a,
  nav .brand-logo {
    color: rgb(255, 255, 255);
