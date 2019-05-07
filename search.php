@@ -12,9 +12,8 @@ require_once("config.php");
 </head>
 <body>
     <?php include('nav.php');?>
-    <form action="./list_book.php" method="get">>
+    <form action="./list_book.php" method="get">
         <div class="row">
-         
             <div class="col s12 m6 offset-m3">
                   <div class="card center-align mg">
                     

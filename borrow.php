@@ -64,6 +64,7 @@ while($result=mysqli_fetch_array($query,MYSQLI_ASSOC))
 ?>
 </table>
 <?php
+if($name!=null)
 echo "ชื่อ : ".$name."<br>";
 
 ?>
