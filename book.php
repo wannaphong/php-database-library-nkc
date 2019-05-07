@@ -46,6 +46,16 @@ $start = ($page - 1) * $perpage;
         </form>
     <?php
         require("db.php");
+        $sql_not="SELECT  BookId  FROM student_not_return";
+        $query2 = mysqli_query($con,$sql_not);
+        $rowcount=mysqli_num_rows($query2);
+        $resultArray = array();
+while($result = mysqli_fetch_array($query2,MYSQLI_ASSOC))
+{
+	array_push($resultArray,$result['BookId']);
+}
+//echo '<pre>'; print_r($resultArray); echo '</pre>';
+        
         if($category==null)
         $sql = "SELECT * FROM Books limit {$start} , {$perpage}";
         else $sql = "SELECT * FROM Books  where categoryid=$category limit {$start} , {$perpage}";
@@ -93,9 +103,14 @@ $start = ($page - 1) * $perpage;
         <?php
         if (isset($_COOKIE['studentid']))
         {
+            
+            if (in_array($result["BookId"], $resultArray)) {
+            }
+            else{
         ?>
         <td><a href="./borrowbook.php?bookid=<?php echo $result["BookId"];?>" class="waves-effect waves-light btn">ยืม</a></td>
         <?php
+            }
         }
         ?>
   </tr>
